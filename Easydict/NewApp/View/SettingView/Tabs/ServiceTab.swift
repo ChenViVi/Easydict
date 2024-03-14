@@ -76,7 +76,7 @@ private class ServiceTabViewModel: ObservableObject {
     }
 
     func getServices() -> [QueryService] {
-        EZLocalStorage.shared().allServices(windowType)
+        EZLocalStorage.shared().allServices(EZWindowType.main)
     }
 
     func onServiceItemMove(fromOffsets: IndexSet, toOffset: Int) {

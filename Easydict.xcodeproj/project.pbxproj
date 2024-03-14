@@ -224,7 +224,6 @@
 		03E2BF752A298F2B00E010F3 /* NSString+EZUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E2BF742A298F2B00E010F3 /* NSString+EZUtils.m */; };
 		03E3E7C22ADE318800812C84 /* EZQueryMenuTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E3E7C12ADE318800812C84 /* EZQueryMenuTextView.m */; };
 		03F0DB382953428300EBF9C1 /* EZLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F0DB372953428300EBF9C1 /* EZLog.m */; };
-		03F14A3B2956016B00CB7379 /* EZVolcanoTranslate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F14A3A2956016B00CB7379 /* EZVolcanoTranslate.m */; };
 		03F25CB329327BC200E66A12 /* EZShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F25CB229327BC200E66A12 /* EZShortcut.m */; };
 		03F639952AA6CFBB009B9914 /* EZBingConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F639942AA6CFBB009B9914 /* EZBingConfig.m */; };
 		03FB3EDD2B1B405B004C3238 /* TencentSigning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB3EDC2B1B405B004C3238 /* TencentSigning.swift */; };
@@ -730,8 +729,6 @@
 		03E3E7C12ADE318800812C84 /* EZQueryMenuTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZQueryMenuTextView.m; sourceTree = "<group>"; };
 		03F0DB362953428300EBF9C1 /* EZLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZLog.h; sourceTree = "<group>"; };
 		03F0DB372953428300EBF9C1 /* EZLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZLog.m; sourceTree = "<group>"; };
-		03F14A392956016B00CB7379 /* EZVolcanoTranslate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZVolcanoTranslate.h; sourceTree = "<group>"; };
-		03F14A3A2956016B00CB7379 /* EZVolcanoTranslate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZVolcanoTranslate.m; sourceTree = "<group>"; };
 		03F25CB129327BC200E66A12 /* EZShortcut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZShortcut.h; sourceTree = "<group>"; };
 		03F25CB229327BC200E66A12 /* EZShortcut.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZShortcut.m; sourceTree = "<group>"; };
 		03F639932AA6CFBB009B9914 /* EZBingConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZBingConfig.h; sourceTree = "<group>"; };
@@ -1391,7 +1388,6 @@
 				C4DD01E72B12B3B00025EE8E /* Tencent */,
 				6220AD582A8280E800BBFB52 /* Bing */,
 				0399C6A929A8608000B4AFCC /* OpenAI */,
-				03F14A382956011400CB7379 /* Volcano */,
 				03BD281B29481BE100F5891A /* AudioPlayer */,
 				03008B282940D2FD0062B821 /* DeepL */,
 				033B7131293CE2010096E2DF /* WebViewTranslator */,
@@ -2066,15 +2062,6 @@
 				03F0DB372953428300EBF9C1 /* EZLog.m */,
 			);
 			path = EZLog;
-			sourceTree = "<group>";
-		};
-		03F14A382956011400CB7379 /* Volcano */ = {
-			isa = PBXGroup;
-			children = (
-				03F14A392956016B00CB7379 /* EZVolcanoTranslate.h */,
-				03F14A3A2956016B00CB7379 /* EZVolcanoTranslate.m */,
-			);
-			path = Volcano;
 			sourceTree = "<group>";
 		};
 		03FD68BC2B1E14B500FD388E /* String */ = {
@@ -2850,7 +2837,6 @@
 				03DC7C622A3C7050000BF7C9 /* EZDisableAutoSelectTextViewController.m in Sources */,
 				03B0232529231FA6001C7E63 /* NSButton+MM.m in Sources */,
 				03D0434E292886D200E7559E /* EZMiniQueryWindow.m in Sources */,
-				03F14A3B2956016B00CB7379 /* EZVolcanoTranslate.m in Sources */,
 				03B0230429231FA6001C7E63 /* EZHoverButton.m in Sources */,
 				0342A9812AD64924002A9F5F /* NSString+EZSplit.m in Sources */,
 				EAED41EF2B54B1430005FE0A /* ConfigurableService.swift in Sources */,

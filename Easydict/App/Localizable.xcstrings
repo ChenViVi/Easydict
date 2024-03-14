@@ -4177,6 +4177,7 @@
       }
     },
     "volcano_translate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
