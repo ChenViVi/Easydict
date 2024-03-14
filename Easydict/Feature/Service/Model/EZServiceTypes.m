@@ -55,15 +55,15 @@ static EZServiceTypes *_instance;
                                            EZServiceTypeOpenAI, [EZOpenAIService class],
                                            EZServiceTypeDeepL, [EZDeepLTranslate class],
                                            EZServiceTypeGoogle, [EZGoogleTranslate class],
-                                           EZServiceTypeApple, [EZAppleService class],
+//                                           EZServiceTypeApple, [EZAppleService class],
                                            EZServiceTypeBaidu, [EZBaiduTranslate class],
                                            EZServiceTypeBing, [EZBingService class],
-                                           EZServiceTypeVolcano, [EZVolcanoTranslate class],
-                                           EZServiceTypeNiuTrans, [EZNiuTransTranslate class],
-                                           EZServiceTypeCaiyun, [EZCaiyunService class],
-                                           EZServiceTypeTencent, [EZTencentService class],
-                                           EZServiceTypeAli, [EZAliService class],
-                                           EZServiceTypeGemini, [EZGeminiService class],
+//                                           EZServiceTypeVolcano, [EZVolcanoTranslate class],
+//                                           EZServiceTypeNiuTrans, [EZNiuTransTranslate class],
+//                                           EZServiceTypeCaiyun, [EZCaiyunService class],
+//                                           EZServiceTypeTencent, [EZTencentService class],
+//                                           EZServiceTypeAli, [EZAliService class],
+//                                           EZServiceTypeGemini, [EZGeminiService class],
                                            nil];
     return allServiceDict;
 }
