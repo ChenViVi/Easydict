@@ -2501,6 +2501,7 @@
       }
     },
     "service.configuration.caiyun.token.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
