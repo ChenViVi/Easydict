@@ -2451,6 +2451,7 @@
       }
     },
     "service.configuration.ali.access_key_id.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2467,6 +2468,7 @@
       }
     },
     "service.configuration.ali.access_key_secret.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
