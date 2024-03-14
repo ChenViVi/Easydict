@@ -1324,6 +1324,7 @@
     },
     "gemini_translate" : {
       "comment" : "The name of Gemini Translate",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2626,6 +2627,7 @@
       }
     },
     "service.configuration.gemini.api_key.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

@@ -58,7 +58,6 @@ static EZServiceTypes *_instance;
                                            EZServiceTypeBing, [EZBingService class],
 //                                           EZServiceTypeCaiyun, [EZCaiyunService class],
 //                                           EZServiceTypeAli, [EZAliService class],
-//                                           EZServiceTypeGemini, [EZGeminiService class],
                                            nil];
     return allServiceDict;
 }
