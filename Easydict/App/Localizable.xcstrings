@@ -2883,6 +2883,7 @@
       }
     },
     "service.configuration.tencent.secret_id.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2899,6 +2900,7 @@
       }
     },
     "service.configuration.tencent.secret_key.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4057,6 +4059,7 @@
     },
     "tencent_translate" : {
       "comment" : "The name of Tencent Translate",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

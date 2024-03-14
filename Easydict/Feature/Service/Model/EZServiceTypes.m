@@ -57,7 +57,6 @@ static EZServiceTypes *_instance;
                                            EZServiceTypeBaidu, [EZBaiduTranslate class],
                                            EZServiceTypeBing, [EZBingService class],
 //                                           EZServiceTypeCaiyun, [EZCaiyunService class],
-//                                           EZServiceTypeTencent, [EZTencentService class],
 //                                           EZServiceTypeAli, [EZAliService class],
 //                                           EZServiceTypeGemini, [EZGeminiService class],
                                            nil];
