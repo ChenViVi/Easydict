@@ -1913,6 +1913,7 @@
       }
     },
     "niuTrans_translate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2657,6 +2658,7 @@
       }
     },
     "service.configuration.niutrans.api_key.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

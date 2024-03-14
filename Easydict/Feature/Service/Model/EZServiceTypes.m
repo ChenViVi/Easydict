@@ -16,7 +16,6 @@
 #import "EZBingService.h"
 #import "EZConfiguration.h"
 #import "EZAppleDictionary.h"
-#import "EZNiuTransTranslate.h"
 #import "Easydict-Swift.h"
 
 @interface EZServiceTypes ()
@@ -57,7 +56,6 @@ static EZServiceTypes *_instance;
 //                                           EZServiceTypeApple, [EZAppleService class],
                                            EZServiceTypeBaidu, [EZBaiduTranslate class],
                                            EZServiceTypeBing, [EZBingService class],
-//                                           EZServiceTypeNiuTrans, [EZNiuTransTranslate class],
 //                                           EZServiceTypeCaiyun, [EZCaiyunService class],
 //                                           EZServiceTypeTencent, [EZTencentService class],
 //                                           EZServiceTypeAli, [EZAliService class],
