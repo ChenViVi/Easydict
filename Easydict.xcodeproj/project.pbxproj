@@ -237,11 +237,8 @@
 		27FE95272B3DC55F000AD654 /* EasydictApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE95262B3DC55F000AD654 /* EasydictApp.swift */; };
 		27FE98092B3DD536000AD654 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE98082B3DD536000AD654 /* SettingView.swift */; };
 		27FE980B2B3DD5D1000AD654 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE980A2B3DD5D1000AD654 /* MenuItemView.swift */; };
-		3CFCE6062BA3EB1600E9F0D1 /* EZScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE5F02BA3EB1600E9F0D1 /* EZScrollViewController.m */; };
 		3CFCE6072BA3EB1600E9F0D1 /* EZAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE5F42BA3EB1600E9F0D1 /* EZAppCell.m */; };
 		3CFCE6082BA3EB1600E9F0D1 /* EZAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE5F52BA3EB1600E9F0D1 /* EZAppModel.m */; };
-		3CFCE60F2BA3EB1600E9F0D1 /* EZCustomTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE6012BA3EB1600E9F0D1 /* EZCustomTableRowView.m */; };
-		3CFCE6102BA3EB1600E9F0D1 /* EZServiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE6052BA3EB1600E9F0D1 /* EZServiceCell.m */; };
 		3CFCE6132BA3EC6800E9F0D1 /* EZMenuItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE6122BA3EC6800E9F0D1 /* EZMenuItemManager.m */; };
 		6220AD5B2A82812300BBFB52 /* EZBingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6220AD5A2A82812300BBFB52 /* EZBingService.m */; };
 		6295DE312A84D82E006145F4 /* EZBingTranslateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6295DE302A84D82E006145F4 /* EZBingTranslateModel.m */; };
@@ -712,16 +709,10 @@
 		27FE980A2B3DD5D1000AD654 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		357E179B303EF855EF4561FB /* Pods-EasydictTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasydictTests.release.xcconfig"; path = "Target Support Files/Pods-EasydictTests/Pods-EasydictTests.release.xcconfig"; sourceTree = "<group>"; };
 		378E73A7EA8FC8FB9C975A63 /* Pods_EasydictTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasydictTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CFCE5F02BA3EB1600E9F0D1 /* EZScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZScrollViewController.m; sourceTree = "<group>"; };
 		3CFCE5F42BA3EB1600E9F0D1 /* EZAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZAppCell.m; sourceTree = "<group>"; };
 		3CFCE5F52BA3EB1600E9F0D1 /* EZAppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZAppModel.m; sourceTree = "<group>"; };
 		3CFCE5F72BA3EB1600E9F0D1 /* EZAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAppCell.h; sourceTree = "<group>"; };
 		3CFCE5F92BA3EB1600E9F0D1 /* EZAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAppModel.h; sourceTree = "<group>"; };
-		3CFCE5FA2BA3EB1600E9F0D1 /* EZScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZScrollViewController.h; sourceTree = "<group>"; };
-		3CFCE6012BA3EB1600E9F0D1 /* EZCustomTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZCustomTableRowView.m; sourceTree = "<group>"; };
-		3CFCE6022BA3EB1600E9F0D1 /* EZServiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZServiceCell.h; sourceTree = "<group>"; };
-		3CFCE6032BA3EB1600E9F0D1 /* EZCustomTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZCustomTableRowView.h; sourceTree = "<group>"; };
-		3CFCE6052BA3EB1600E9F0D1 /* EZServiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZServiceCell.m; sourceTree = "<group>"; };
 		3CFCE6112BA3EC6800E9F0D1 /* EZMenuItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZMenuItemManager.h; sourceTree = "<group>"; };
 		3CFCE6122BA3EC6800E9F0D1 /* EZMenuItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZMenuItemManager.m; sourceTree = "<group>"; };
 		6220AD592A82812300BBFB52 /* EZBingService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZBingService.h; sourceTree = "<group>"; };
@@ -2041,9 +2032,6 @@
 			isa = PBXGroup;
 			children = (
 				3CFCE5F32BA3EB1600E9F0D1 /* DisableAutoSelectTextViewController */,
-				3CFCE5FA2BA3EB1600E9F0D1 /* EZScrollViewController.h */,
-				3CFCE5F02BA3EB1600E9F0D1 /* EZScrollViewController.m */,
-				3CFCE5FF2BA3EB1600E9F0D1 /* ServiceViewController */,
 			);
 			path = PerferenceWindow;
 			sourceTree = "<group>";
@@ -2057,17 +2045,6 @@
 				3CFCE5F92BA3EB1600E9F0D1 /* EZAppModel.h */,
 			);
 			path = DisableAutoSelectTextViewController;
-			sourceTree = "<group>";
-		};
-		3CFCE5FF2BA3EB1600E9F0D1 /* ServiceViewController */ = {
-			isa = PBXGroup;
-			children = (
-				3CFCE6012BA3EB1600E9F0D1 /* EZCustomTableRowView.m */,
-				3CFCE6022BA3EB1600E9F0D1 /* EZServiceCell.h */,
-				3CFCE6032BA3EB1600E9F0D1 /* EZCustomTableRowView.h */,
-				3CFCE6052BA3EB1600E9F0D1 /* EZServiceCell.m */,
-			);
-			path = ServiceViewController;
 			sourceTree = "<group>";
 		};
 		6220AD582A8280E800BBFB52 /* Bing */ = {
@@ -2683,9 +2660,7 @@
 				0309E1F4292BD6A100AFB76A /* EZQueryModel.m in Sources */,
 				03BFFC7129612E10004E033E /* NSString+EZConvenience.m in Sources */,
 				03BDA7BD2A26DA280079D04F /* XPMArguments_Coalescer_Internal.m in Sources */,
-				3CFCE6102BA3EB1600E9F0D1 /* EZServiceCell.m in Sources */,
 				03B3B8B22925D5B200168E8D /* EZPopButtonWindow.m in Sources */,
-				3CFCE6062BA3EB1600E9F0D1 /* EZScrollViewController.m in Sources */,
 				03B0231529231FA6001C7E63 /* SnipWindow.m in Sources */,
 				033363A0293A05D200FED9C8 /* EZSelectLanguageButton.m in Sources */,
 				960835502B6791F200C6A931 /* Shortcut+Validator.swift in Sources */,
@@ -2725,7 +2700,6 @@
 				033B7134293CE2430096E2DF /* EZWebViewTranslator.m in Sources */,
 				03CF88632B137F650030C199 /* Array+Convenience.swift in Sources */,
 				03B0231229231FA6001C7E63 /* NSObject+DarkMode.m in Sources */,
-				3CFCE60F2BA3EB1600E9F0D1 /* EZCustomTableRowView.m in Sources */,
 				3CFCE6132BA3EC6800E9F0D1 /* EZMenuItemManager.m in Sources */,
 				0AC11B222B4D16A500F07198 /* WindowAccessor.swift in Sources */,
 				03B0233829231FA6001C7E63 /* MMOrderedDictionary.m in Sources */,
