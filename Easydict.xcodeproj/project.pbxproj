@@ -95,7 +95,6 @@
 		039B694F2A9D9F370063709D /* EZWebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 039B694E2A9D9F370063709D /* EZWebViewManager.m */; };
 		039CC90D292F664E0037B91E /* NSObject+EZWindowType.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CC90C292F664E0037B91E /* NSObject+EZWindowType.m */; };
 		039CC910292F86F40037B91E /* NSImage+EZResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CC90F292F86F40037B91E /* NSImage+EZResize.m */; };
-		039CC914292FB3180037B91E /* EZPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 039CC913292FB3180037B91E /* EZPopUpButton.m */; };
 		039D119929D5E26300C93F46 /* EZAudioUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 039D119829D5E26300C93F46 /* EZAudioUtils.m */; };
 		03A8308D2B405F8E00112834 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 03A8308C2B405F8E00112834 /* Sparkle */; };
 		03A830902B4073E700112834 /* AppCenterAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 03A8308F2B4073E700112834 /* AppCenterAnalytics */; };
@@ -463,8 +462,6 @@
 		039CC90C292F664E0037B91E /* NSObject+EZWindowType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+EZWindowType.m"; sourceTree = "<group>"; };
 		039CC90E292F86F40037B91E /* NSImage+EZResize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSImage+EZResize.h"; sourceTree = "<group>"; };
 		039CC90F292F86F40037B91E /* NSImage+EZResize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSImage+EZResize.m"; sourceTree = "<group>"; };
-		039CC912292FB3180037B91E /* EZPopUpButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZPopUpButton.h; sourceTree = "<group>"; };
-		039CC913292FB3180037B91E /* EZPopUpButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZPopUpButton.m; sourceTree = "<group>"; };
 		039D119729D5E26300C93F46 /* EZAudioUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EZAudioUtils.h; sourceTree = "<group>"; };
 		039D119829D5E26300C93F46 /* EZAudioUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EZAudioUtils.m; sourceTree = "<group>"; };
 		03B0221B29231FA6001C7E63 /* Easydict-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Easydict-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -1226,15 +1223,6 @@
 			path = EZLinkParser;
 			sourceTree = "<group>";
 		};
-		039CC911292FB2F80037B91E /* PopUpButton */ = {
-			isa = PBXGroup;
-			children = (
-				039CC912292FB3180037B91E /* EZPopUpButton.h */,
-				039CC913292FB3180037B91E /* EZPopUpButton.m */,
-			);
-			path = PopUpButton;
-			sourceTree = "<group>";
-		};
 		039D119629D5E21E00C93F46 /* EZAudioUtils */ = {
 			isa = PBXGroup;
 			children = (
@@ -1402,7 +1390,6 @@
 				03DC7C632A3CA465000BF7C9 /* EZSegmentedControl */,
 				03247E37296AE8C800AFCD67 /* LoadingAnimationView */,
 				036E7D78293F4F61002675DF /* CustomButton */,
-				039CC911292FB2F80037B91E /* PopUpButton */,
 				0309E1EA292B437C00AFB76A /* TextView */,
 				03991155292927A100E1B06D /* Titlebar */,
 				03B0225B29231FA6001C7E63 /* QueryView */,
@@ -2714,7 +2701,6 @@
 				03B0233429231FA6001C7E63 /* MMConsoleLogFormatter.m in Sources */,
 				037852B9295D49F900D0E2CF /* EZTableRowView.m in Sources */,
 				033363A6293C4AFA00FED9C8 /* PrintBeautifulLog.m in Sources */,
-				039CC914292FB3180037B91E /* EZPopUpButton.m in Sources */,
 				0399C6B829A9F4B800B4AFCC /* EZSchemeParser.m in Sources */,
 				03542A3A2937AE6400C34C33 /* EZQueryService.m in Sources */,
 				03B0230529231FA6001C7E63 /* EZButton.m in Sources */,
