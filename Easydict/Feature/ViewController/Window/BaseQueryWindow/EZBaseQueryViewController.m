@@ -194,7 +194,7 @@ static void dispatch_block_on_main_safely(dispatch_block_t block) {
     self.youdaoService = nil;
     EZServiceType defaultTTSServiceType = Configuration.shared.defaultTTSServiceType;
     
-    NSArray *allServices = [EZLocalStorage.shared allServices:self.windowType];
+    NSArray *allServices = [EZLocalStorage.shared allServices];
     for (EZQueryService *service in allServices) {
         if (service.enabled) {
             service.queryModel = self.queryModel;

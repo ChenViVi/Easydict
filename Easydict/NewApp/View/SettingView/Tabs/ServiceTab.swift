@@ -64,14 +64,14 @@ private class ServiceTabViewModel: ObservableObject {
 
     @Published var selectedService: QueryService?
 
-    @Published private(set) var services: [QueryService] = EZLocalStorage.shared().allServices(.main)
+    @Published private(set) var services: [QueryService] = EZLocalStorage.shared().allServices()
 
     func updateServices() {
         services = getServices()
     }
 
     func getServices() -> [QueryService] {
-        EZLocalStorage.shared().allServices(EZWindowType.main)
+        EZLocalStorage.shared().allServices()
     }
 
     func onServiceItemMove(fromOffsets: IndexSet, toOffset: Int) {

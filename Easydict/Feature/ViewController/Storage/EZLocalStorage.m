@@ -125,10 +125,10 @@ static EZLocalStorage *_instance;
     [[NSUserDefaults standardUserDefaults] setObject:allServiceTypes forKey:allServiceTypesKey];
 }
 
-- (NSArray<EZQueryService *> *)allServices:(EZWindowType)windowType {
-    NSArray *allServices = [EZServiceTypes.shared servicesFromTypes:[self allServiceTypes:windowType]];
+- (NSArray<EZQueryService *> *)allServices {
+    NSArray *allServices = [EZServiceTypes.shared servicesFromTypes:[self allServiceTypes:EZWindowTypeMain]];
     for (EZQueryService *service in allServices) {
-        EZServiceInfo *serviceInfo = [self serviceInfoWithType:service.serviceType windowType:windowType];
+        EZServiceInfo *serviceInfo = [self serviceInfoWithType:service.serviceType windowType:EZWindowTypeMain];
         BOOL enabled = YES;
         BOOL enabledQuery = YES;
         if (serviceInfo) {

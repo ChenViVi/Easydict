@@ -31,7 +31,7 @@ static NSString *const EZWindowTypeKey = @"EZWindowTypeKey";
 - (NSArray<EZServiceType> *)allServiceTypes:(EZWindowType)windowType;
 - (void)setAllServiceTypes:(NSArray<EZServiceType> *)allServiceTypes windowType:(EZWindowType)windowType;
 
-- (NSArray<EZQueryService *> *)allServices:(EZWindowType)windowType;
+- (NSArray<EZQueryService *> *)allServices;
 
 - (nullable EZServiceInfo *)serviceInfoWithType:(EZServiceType)type windowType:(EZWindowType)windowType;
 - (void)setServiceInfo:(EZServiceInfo *)service windowType:(EZWindowType)windowType;
