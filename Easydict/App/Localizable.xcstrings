@@ -283,6 +283,7 @@
       }
     },
     "author" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -299,6 +300,7 @@
       }
     },
     "auto_check_update" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -961,6 +963,7 @@
       }
     },
     "enable_beta_new_app" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1364,6 +1367,7 @@
       }
     },
     "GitHub:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -1692,6 +1696,7 @@
       }
     },
     "lastest_version" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -4122,6 +4127,7 @@
       }
     },
     "Tisfeng" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
