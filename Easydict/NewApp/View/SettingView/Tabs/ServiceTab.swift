@@ -166,23 +166,3 @@ private struct ServiceItemView: View {
         .padding(10)
     }
 }
-
-@available(macOS 13, *)
-private struct WindowTypePicker: View {
-    @Binding var windowType: EZWindowType
-
-    var body: some View {
-        HStack {
-            Picker(selection: $windowType) {
-                ForEach([EZWindowType]([.mini, .fixed, .main]), id: \.rawValue) { windowType in
-                    Text(windowType.localizedStringResource)
-                        .tag(windowType)
-                }
-            } label: {
-                EmptyView()
-            }
-            .labelsHidden()
-            .pickerStyle(.segmented)
-        }
-    }
-}
