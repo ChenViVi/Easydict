@@ -7,7 +7,6 @@
 //
 
 #import "EZMenuItemManager.h"
-#import "EZPreferencesWindowController.h"
 #import "EZWindowManager.h"
 #import "Snip.h"
 #import "EZShortcut.h"
@@ -172,15 +171,6 @@ static EZMenuItemManager *_instance;
 - (IBAction)screenshotOCRAction:(NSMenuItem *)sender {
     NSLog(@"screenshot OCR");
     [EZWindowManager.shared screenshotOCR];
-}
-
-
-- (IBAction)settingAction:(NSMenuItem *)sender {
-    NSLog(@"设置...");
-    if (Snip.shared.isSnapshotting) {
-        [Snip.shared stop];
-    }
-    [EZPreferencesWindowController.shared show];
 }
 
 - (IBAction)checkForUpdateItem:(id)sender {

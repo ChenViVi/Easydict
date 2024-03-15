@@ -29,6 +29,7 @@
       }
     },
     "adjust_pop_button_origin" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -89,6 +90,7 @@
       }
     },
     "allow_collect_analytics" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -105,6 +107,7 @@
       }
     },
     "allow_collect_crash_log" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -121,6 +124,7 @@
       }
     },
     "analytics" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -154,6 +158,7 @@
       }
     },
     "app_appearance" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -358,6 +363,7 @@
       }
     },
     "auto_copy_text" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -374,6 +380,7 @@
       }
     },
     "auto_get_selected_text" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -390,6 +397,7 @@
       }
     },
     "auto_play_word_audio" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -406,6 +414,7 @@
       }
     },
     "auto_query" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -486,6 +495,7 @@
       }
     },
     "avoid_conflict_with_PopClip_display" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -529,6 +539,7 @@
       }
     },
     "beta_new_app" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -589,6 +600,7 @@
       }
     },
     "cancel" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -669,6 +681,7 @@
       }
     },
     "click_icon_query" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -750,6 +763,7 @@
       }
     },
     "crash_log" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -809,6 +823,7 @@
       }
     },
     "default_tts_service" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -842,6 +857,7 @@
       }
     },
     "disable_crash_log_warning" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -858,6 +874,7 @@
       }
     },
     "disable_empty_copy_beep" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -874,6 +891,7 @@
       }
     },
     "disable_empty_copy_beep_msg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -959,6 +977,7 @@
       }
     },
     "equal_first_and_second_language" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1135,6 +1154,7 @@
       }
     },
     "first_language" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1167,6 +1187,7 @@
       }
     },
     "fixed_window_position" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1280,6 +1301,7 @@
       }
     },
     "force_auto_get_selected_text_msg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1296,6 +1318,7 @@
       }
     },
     "force_auto_get_selected_text_title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1442,6 +1465,7 @@
       }
     },
     "hide_menu_bar_icon_msg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1508,6 +1532,7 @@
       }
     },
     "input_translate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1585,6 +1610,7 @@
       }
     },
     "language_detect_optimize" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1682,6 +1708,7 @@
       }
     },
     "launch" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1751,6 +1778,7 @@
       }
     },
     "menu_bar_icon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1898,6 +1926,7 @@
       }
     },
     "mouse_select_translate_window_type" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2160,6 +2189,7 @@
       }
     },
     "play_word_audio" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2225,6 +2255,7 @@
     },
     "privacy" : {
       "comment" : "privacy",
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2241,6 +2272,7 @@
       }
     },
     "privacy_statement" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2257,6 +2289,7 @@
       }
     },
     "privacy_statement_content" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2305,6 +2338,7 @@
       }
     },
     "quick_link" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2385,6 +2419,7 @@
       }
     },
     "second_language" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2418,6 +2453,7 @@
       }
     },
     "select_translate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3810,6 +3846,7 @@
       }
     },
     "shortcut_select_translate_window_type" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3890,6 +3927,7 @@
       }
     },
     "show_main_window" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3906,6 +3944,7 @@
       }
     },
     "show_mini_window" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3922,6 +3961,7 @@
       }
     },
     "silent_screenshot_ocr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3971,6 +4011,7 @@
       }
     },
     "snip_translate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
