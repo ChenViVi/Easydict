@@ -15,18 +15,14 @@ struct ServiceTab: View {
 
     var body: some View {
         HStack {
-            VStack {
-                WindowTypePicker(windowType: $viewModel.windowType)
-                    .padding()
-                List(selection: $viewModel.selectedService) {
-                    ServiceItems()
-                }
-                .listStyle(.plain)
-                .scrollIndicators(.never)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-                .padding(.bottom)
-                .padding(.horizontal)
+            List(selection: $viewModel.selectedService) {
+                ServiceItems()
             }
+            .listStyle(.plain)
+            .scrollIndicators(.never)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .padding()
+            .frame(width: 220)
             Group {
                 if let service = viewModel.selectedService {
                     // To provide configuration options for a service, follow these steps
@@ -51,14 +47,13 @@ struct ServiceTab: View {
                     }
                 }
             }
-            .layoutPriority(1)
         }
         .environmentObject(viewModel)
     }
 }
 
 private class ServiceTabViewModel: ObservableObject {
-    @Published var windowType = EZWindowType.mini {
+    @Published var windowType = EZWindowType.main {
         didSet {
             if oldValue != windowType {
                 updateServices()
@@ -69,7 +64,7 @@ private class ServiceTabViewModel: ObservableObject {
 
     @Published var selectedService: QueryService?
 
-    @Published private(set) var services: [QueryService] = EZLocalStorage.shared().allServices(.mini)
+    @Published private(set) var services: [QueryService] = EZLocalStorage.shared().allServices(.main)
 
     func updateServices() {
         services = getServices()
