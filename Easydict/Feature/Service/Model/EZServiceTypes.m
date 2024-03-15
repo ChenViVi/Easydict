@@ -56,7 +56,6 @@ static EZServiceTypes *_instance;
 //                                           EZServiceTypeApple, [EZAppleService class],
                                            EZServiceTypeBaidu, [EZBaiduTranslate class],
                                            EZServiceTypeBing, [EZBingService class],
-//                                           EZServiceTypeCaiyun, [EZCaiyunService class],
                                            nil];
     return allServiceDict;
 }
