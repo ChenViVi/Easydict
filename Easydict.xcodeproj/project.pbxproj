@@ -234,7 +234,6 @@
 		27FE95272B3DC55F000AD654 /* EasydictApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE95262B3DC55F000AD654 /* EasydictApp.swift */; };
 		27FE98092B3DD536000AD654 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE98082B3DD536000AD654 /* SettingView.swift */; };
 		27FE980B2B3DD5D1000AD654 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE980A2B3DD5D1000AD654 /* MenuItemView.swift */; };
-		3CFCE6072BA3EB1600E9F0D1 /* EZAppCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE5F42BA3EB1600E9F0D1 /* EZAppCell.m */; };
 		3CFCE6082BA3EB1600E9F0D1 /* EZAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE5F52BA3EB1600E9F0D1 /* EZAppModel.m */; };
 		3CFCE6132BA3EC6800E9F0D1 /* EZMenuItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE6122BA3EC6800E9F0D1 /* EZMenuItemManager.m */; };
 		6220AD5B2A82812300BBFB52 /* EZBingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6220AD5A2A82812300BBFB52 /* EZBingService.m */; };
@@ -700,9 +699,7 @@
 		27FE980A2B3DD5D1000AD654 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		357E179B303EF855EF4561FB /* Pods-EasydictTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasydictTests.release.xcconfig"; path = "Target Support Files/Pods-EasydictTests/Pods-EasydictTests.release.xcconfig"; sourceTree = "<group>"; };
 		378E73A7EA8FC8FB9C975A63 /* Pods_EasydictTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasydictTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3CFCE5F42BA3EB1600E9F0D1 /* EZAppCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZAppCell.m; sourceTree = "<group>"; };
 		3CFCE5F52BA3EB1600E9F0D1 /* EZAppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZAppModel.m; sourceTree = "<group>"; };
-		3CFCE5F72BA3EB1600E9F0D1 /* EZAppCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAppCell.h; sourceTree = "<group>"; };
 		3CFCE5F92BA3EB1600E9F0D1 /* EZAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAppModel.h; sourceTree = "<group>"; };
 		3CFCE6112BA3EC6800E9F0D1 /* EZMenuItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZMenuItemManager.h; sourceTree = "<group>"; };
 		3CFCE6122BA3EC6800E9F0D1 /* EZMenuItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZMenuItemManager.m; sourceTree = "<group>"; };
@@ -2016,9 +2013,7 @@
 		3CFCE5F32BA3EB1600E9F0D1 /* DisableAutoSelectTextViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3CFCE5F42BA3EB1600E9F0D1 /* EZAppCell.m */,
 				3CFCE5F52BA3EB1600E9F0D1 /* EZAppModel.m */,
-				3CFCE5F72BA3EB1600E9F0D1 /* EZAppCell.h */,
 				3CFCE5F92BA3EB1600E9F0D1 /* EZAppModel.h */,
 			);
 			path = DisableAutoSelectTextViewController;
@@ -2751,7 +2746,6 @@
 				03BFFC6E295FE59C004E033E /* EZQueryResult+EZYoudaoDictModel.m in Sources */,
 				DC3C643F2B187119008EEDD8 /* ChangeFontSizeView.swift in Sources */,
 				03B0232829231FA6001C7E63 /* NSTextView+Height.m in Sources */,
-				3CFCE6072BA3EB1600E9F0D1 /* EZAppCell.m in Sources */,
 				03B0232129231FA6001C7E63 /* NSPasteboard+MM.m in Sources */,
 				03D043522928935300E7559E /* EZMainQueryWindow.m in Sources */,
 				03D8B26E292DBD2000D5A811 /* EZCoordinateUtils.m in Sources */,
