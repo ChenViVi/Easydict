@@ -8,17 +8,11 @@
 #import "NSString+EZChineseText.h"
 #import "EZError.h"
 #import "EZConst.h"
-//#import "EZSettingViewController.h"
-//#import "EZAboutViewController.h"
-//#import "EZServiceViewController.h"
-//#import "EZPrivacyViewController.h"
-//#import "EZDisableAutoSelectTextViewController.h"
 
 #import "EZMenuItemManager.h"
 #import "NSImage+MM.h"
 #import "NSColor+MyColors.h"
 
-#import "entry.h"
 #import "AppDelegate.h"
 
 #import "EZAppModel.h"

@@ -13,12 +13,7 @@ import SwiftUI
 @main
 enum EasydictCmpatibilityEntry {
     static func main() {
-        parseArmguments()
-        if Configuration.shared.enableBetaNewApp {
-            EasydictApp.main()
-        } else {
-            _ = NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)
-        }
+        EasydictApp.main()
     }
 }
 
