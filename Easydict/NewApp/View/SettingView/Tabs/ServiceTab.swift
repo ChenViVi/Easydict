@@ -22,7 +22,7 @@ struct ServiceTab: View {
             .scrollIndicators(.never)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding()
-            .frame(width: 220)
+            .frame(width: 250)
             Group {
                 if let service = viewModel.selectedService {
                     // To provide configuration options for a service, follow these steps
