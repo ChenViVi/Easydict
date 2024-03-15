@@ -73,7 +73,7 @@ struct SettingView: View {
         case .advanced:
             400
         case .about:
-            450
+            320
         default:
             maxWidth - 110
         }
