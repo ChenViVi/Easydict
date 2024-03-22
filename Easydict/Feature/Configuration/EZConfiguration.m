@@ -64,7 +64,6 @@ NSString *const kEnableBetaNewAppKey = @"EZConfiguration_kEnableBetaNewAppKey";
 @interface EZConfiguration ()
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
-@property (nonatomic, strong, readwrite) SPUUpdater *updater;
 
 @end
 
@@ -142,14 +141,6 @@ static EZConfiguration *_instance;
 - (BOOL)launchAtStartup {
     BOOL launchAtStartup = [[NSUserDefaults mm_read:kLaunchAtStartupKey] boolValue];
     return launchAtStartup;
-}
-
-- (SPUUpdater *)updater {
-    return GlobalContext.shared.updaterController.updater;
-}
-
-- (BOOL)automaticallyChecksForUpdates {
-    return self.updater.automaticallyChecksForUpdates;
 }
 
 #pragma mark - setter

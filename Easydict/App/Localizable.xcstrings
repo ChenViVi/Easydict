@@ -619,6 +619,7 @@
       }
     },
     "check_updates" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

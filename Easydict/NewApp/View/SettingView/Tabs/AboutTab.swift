@@ -35,8 +35,6 @@ struct AboutTab: View {
         }
     }
 
-    @StateObject private var checkUpdaterViewModel = CheckUpdaterViewModel()
-
     @State
     private var lastestVersion: String?
     private var appName: String {
@@ -45,22 +43,6 @@ struct AboutTab: View {
 
     private var version: String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
-    }
-
-    class CheckUpdaterViewModel: ObservableObject {
-        private let updater = Configuration.shared.updater
-
-        @Published var autoChecksForUpdates = true {
-            didSet {
-                updater.automaticallyChecksForUpdates = autoChecksForUpdates
-            }
-        }
-
-        init() {
-            updater
-                .publisher(for: \.automaticallyChecksForUpdates)
-                .assign(to: &$autoChecksForUpdates)
-        }
     }
 }
 

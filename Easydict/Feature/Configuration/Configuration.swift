@@ -57,18 +57,6 @@ let kHideMenuBarIconKey = "EZConfiguration_kHideMenuBarIconKey"
     @DefaultsWrapper(.launchAtStartup)
     var launchAtStartup: Bool
 
-    let updater = GlobalContext.shared.updaterController.updater
-
-    var automaticallyChecksForUpdates: Bool {
-        get {
-            updater.automaticallyChecksForUpdates
-        }
-        set {
-            updater.automaticallyChecksForUpdates = newValue
-            logSettings(["automatically_checks_for_updates": newValue])
-        }
-    }
-
     @DefaultsWrapper(.hideMainWindow)
     var hideMainWindow: Bool
 
@@ -464,10 +452,6 @@ private extension Configuration {
         }
 
         logSettings(["launch_at_startup": new])
-    }
-
-    func didSetAutomaticallyChecksForUpdates() {
-        logSettings(["automatically_checks_for_updates": automaticallyChecksForUpdates])
     }
 
     func didSetHideMainWindow() {

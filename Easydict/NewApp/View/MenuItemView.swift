@@ -12,20 +12,7 @@ import SwiftUI
 import ZipArchive
 
 @available(macOS 13, *)
-final class MenuItemStore: ObservableObject {
-    @Published var canCheckForUpdates = false
-
-    init() {
-        Configuration.shared.updater
-            .publisher(for: \.canCheckForUpdates)
-            .assign(to: &$canCheckForUpdates)
-    }
-}
-
-@available(macOS 13, *)
 struct MenuItemView: View {
-    @ObservedObject private var store = MenuItemStore()
-
     var body: some View {
         // ️.menuBarExtraStyle为 .menu 时某些控件可能会失效 ，只能显示内容（按照菜单项高度、图像以 template 方式渲染）无法交互 ，比如 Stepper、Slider 等，像基本的 Button、Text、Divider、Image 等还是能正常显示的。
         // Button 和Label的systemImage是不会渲染的
@@ -46,7 +33,6 @@ struct MenuItemView: View {
             Divider()
             settingItem
                 .keyboardShortcut(.init(","))
-            checkUpdateItem
             helpItem
             Divider()
             quitItem
@@ -178,14 +164,6 @@ struct MenuItemView: View {
     }
 
     // MARK: - Setting
-
-    @ViewBuilder
-    private var checkUpdateItem: some View {
-        Button("check_updates") {
-            NSLog("检查更新")
-            Configuration.shared.updater.checkForUpdates()
-        }.disabled(!store.canCheckForUpdates)
-    }
 
     @ViewBuilder
     private var quitItem: some View {
