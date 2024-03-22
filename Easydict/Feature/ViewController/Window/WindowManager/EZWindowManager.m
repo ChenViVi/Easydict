@@ -682,11 +682,6 @@ static EZWindowManager *_instance;
 - (void)selectTextTranslate {
     MMLogInfo(@"selectTextTranslate");
     
-    if (![self.eventMonitor isAccessibilityEnabled]) {
-        NSLog(@"App is not trusted");
-        return;
-    }
-    
     [self saveFrontmostApplication];
     if (Snip.shared.isSnapshotting) {
         return;
@@ -696,6 +691,10 @@ static EZWindowManager *_instance;
     NSLog(@"selectTextTranslate windowType: %@", @(windowType));
     self.eventMonitor.actionType = EZActionTypeShortcutQuery;
     [self.eventMonitor getSelectedText:^(NSString *_Nullable text) {
+        if (text == nil && ![self.eventMonitor isAccessibilityEnabled]) {
+            NSLog(@"xxxx app not trust");
+            return;
+        }
         self.actionType = self.eventMonitor.actionType;
         
         /**
