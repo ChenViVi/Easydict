@@ -12,7 +12,9 @@ struct MenuView: View {
     var body: some View {
         VStack {
             VStack {
-                Button(action: {}) {
+                Button(action: {
+                    
+                }) {
                     HStack {
                         ZStack {
                             Color.accentColor
@@ -33,7 +35,9 @@ struct MenuView: View {
                     }
                 }
                 .buttonStyle(.borderless)
-                Button(action: {}) {
+                Button(action: {
+                    
+                }) {
                     HStack {
                         ZStack {
                             Color.accentColor
@@ -54,7 +58,9 @@ struct MenuView: View {
                     }
                 }
                 .buttonStyle(.borderless)
-                Button(action: {}) {
+                Button(action: {
+                    
+                }) {
                     HStack {
                         ZStack {
                             Color.accentColor
@@ -80,7 +86,9 @@ struct MenuView: View {
             .background(Color.bgMenuItem)
             .cornerRadius(10)
             .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
-            Button(action: {}) {
+            Button(action: {
+                
+            }) {
                 HStack {
                     ZStack {
                         Color.accentColor
@@ -106,7 +114,9 @@ struct MenuView: View {
             }
             .buttonStyle(.borderless)
             HStack(spacing: 10) {
-                Button(action: {}) {
+                Button(action: {
+                    
+                }) {
                     VStack {
                         Spacer()
                         Image(systemName: "gear")
@@ -122,7 +132,9 @@ struct MenuView: View {
                     .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
                 }
                 .buttonStyle(.borderless)
-                Button(action: {}) {
+                Button(action: {
+                    
+                }) {
                     VStack {
                         Spacer()
                         Image(systemName: "rectangle.portrait.and.arrow.right")
