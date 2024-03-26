@@ -13,7 +13,7 @@ struct MenuView: View {
         VStack {
             VStack {
                 Button(action: {
-                    
+                    EZWindowManager.shared().inputTranslate()
                 }) {
                     HStack {
                         ZStack {
@@ -36,7 +36,7 @@ struct MenuView: View {
                 }
                 .buttonStyle(.borderless)
                 Button(action: {
-                    
+                    EZWindowManager.shared().snipTranslate()
                 }) {
                     HStack {
                         ZStack {
@@ -59,7 +59,7 @@ struct MenuView: View {
                 }
                 .buttonStyle(.borderless)
                 Button(action: {
-                    
+                    EZWindowManager.shared().selectTextTranslate()
                 }) {
                     HStack {
                         ZStack {
@@ -87,7 +87,7 @@ struct MenuView: View {
             .cornerRadius(10)
             .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
             Button(action: {
-                
+                EZWindowManager.shared().screenshotOCR()
             }) {
                 HStack {
                     ZStack {
@@ -115,7 +115,8 @@ struct MenuView: View {
             .buttonStyle(.borderless)
             HStack(spacing: 10) {
                 Button(action: {
-                    
+                    NSApp.activate(ignoringOtherApps: true)
+                    NSApplication.shared.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
                 }) {
                     VStack {
                         Spacer()
@@ -133,7 +134,7 @@ struct MenuView: View {
                 }
                 .buttonStyle(.borderless)
                 Button(action: {
-                    
+                    NSApplication.shared.terminate(nil)
                 }) {
                     VStack {
                         Spacer()
