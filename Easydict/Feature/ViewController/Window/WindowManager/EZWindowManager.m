@@ -711,9 +711,45 @@ static EZWindowManager *_instance;
     }];
 }
 
+- (BOOL)canRecord {
+    if (@available(macOS 10.15, *)) {
+        BOOL canRecord = true;
+        CGDisplayStreamRef stream = CGDisplayStreamCreateWithDispatchQueue(CGMainDisplayID(), 1, 1, kCVPixelFormatType_32BGRA, nil,
+                                                                           dispatch_queue_create(NULL, NULL), ^(CGDisplayStreamFrameStatus status, uint64_t displayTime, IOSurfaceRef frameSurface, CGDisplayStreamUpdateRef updateRef) {   });
+        canRecord = stream != NULL;
+        if (stream) {
+            CFRelease(stream);
+        }
+        return canRecord;
+    }
+    return YES;
+}
+
+
+
 - (void)snipTranslate {
     MMLogInfo(@"snipTranslate");
-    
+    if (![self canRecord]) {
+        NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+        if (!appName) {
+            appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+        }
+        NSAlert *alert = [[NSAlert alloc] init];
+        alert.messageText = [NSString stringWithFormat:@"%@ needs access to your screen to analysis texts and translate for you, if you granted permission, please restart app", appName];
+        [alert addButtonWithTitle:@"Grant"];
+        [alert addButtonWithTitle:@"Restart App"];
+        [alert addButtonWithTitle:@"Don't Allow"];
+        [alert beginSheetModalForWindow:[EZWindowManager shared].mainWindow completionHandler:^(NSInteger returnCode){
+            if(returnCode == NSAlertFirstButtonReturn) {
+                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture"]];
+                return;
+            }
+            if(returnCode == NSAlertSecondButtonReturn) {
+                return;
+            }
+        }];
+        return;
+    }
     [self saveFrontmostApplication];
     
     if (Snip.shared.isSnapshotting) {
