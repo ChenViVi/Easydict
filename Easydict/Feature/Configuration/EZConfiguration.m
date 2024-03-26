@@ -15,7 +15,7 @@
 #import "EZScriptExecutor.h"
 #import "EZLog.h"
 #import "EZLanguageManager.h"
-#import "AppDelegate.h"
+//#import "AppDelegate.h"
 #import "Easydict-Swift.h"
 #import "DarkModeManager.h"
 
@@ -63,7 +63,7 @@ NSString *const kEnableBetaNewAppKey = @"EZConfiguration_kEnableBetaNewAppKey";
 
 @interface EZConfiguration ()
 
-@property (nonatomic, strong) AppDelegate *appDelegate;
+//@property (nonatomic, strong) AppDelegate *appDelegate;
 
 @end
 
@@ -90,7 +90,7 @@ static EZConfiguration *_instance;
 }
 
 - (void)setup {
-    self.appDelegate = (AppDelegate *)[NSApp delegate];
+    //self.appDelegate = (AppDelegate *)[NSApp delegate];
     
     EZLanguage defaultFirstLanguage = [EZLanguageManager.shared systemPreferredTwoLanguages][0];
     self.firstLanguage = [NSUserDefaults mm_readString:kFirstLanguageKey defaultValue:defaultFirstLanguage];

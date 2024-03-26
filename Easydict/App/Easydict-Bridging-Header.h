@@ -13,7 +13,7 @@
 #import "NSImage+MM.h"
 #import "NSColor+MyColors.h"
 
-#import "AppDelegate.h"
+#import "AppDelegate1.h"
 
 #import "EZAppModel.h"
 #import "EZLocalStorage.h"

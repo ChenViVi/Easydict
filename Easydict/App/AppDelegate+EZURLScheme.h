@@ -1,19 +1,19 @@
+////
+////  AppDelegate+EZURLScheme.h
+////  Easydict
+////
+////  Created by tisfeng on 2023/5/29.
+////  Copyright © 2023 izual. All rights reserved.
+////
 //
-//  AppDelegate+EZURLScheme.h
-//  Easydict
+//#import "AppDelegate.h"
 //
-//  Created by tisfeng on 2023/5/29.
-//  Copyright © 2023 izual. All rights reserved.
+//NS_ASSUME_NONNULL_BEGIN
 //
-
-#import "AppDelegate.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-@interface AppDelegate (EZURLScheme)
-
-- (void)registerRouters;
-
-@end
-
-NS_ASSUME_NONNULL_END
+//@interface AppDelegate (EZURLScheme)
+//
+//- (void)registerRouters;
+//
+//@end
+//
+//NS_ASSUME_NONNULL_END

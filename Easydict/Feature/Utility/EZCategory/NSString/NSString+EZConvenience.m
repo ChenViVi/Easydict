@@ -8,7 +8,6 @@
 
 #import "NSString+EZConvenience.h"
 #import <CommonCrypto/CommonDigest.h>
-#import "EZToast.h"
 
 @implementation NSString (EZConvenience)
 
@@ -107,9 +106,6 @@
 
 - (void)copyAndShowToast:(BOOL)showToast {
     [NSPasteboard mm_generalPasteboardSetString:self];
-    if (self.length && showToast) {
-        [EZToast showText:@"Copy Success"];
-    }
 }
 
 /// Check if the string is a valid URL, must has scheme, https://www.google.com

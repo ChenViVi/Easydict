@@ -944,6 +944,7 @@
       }
     },
     "Easydict" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -954,6 +955,7 @@
       }
     },
     "Easydict 🍃" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -1535,6 +1537,9 @@
           }
         }
       }
+    },
+    "Input Translate" : {
+
     },
     "input_translate" : {
       "extractionState" : "stale",
@@ -2424,6 +2429,9 @@
         }
       }
     },
+    "Screenshot Translate" : {
+
+    },
     "second_language" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2440,6 +2448,9 @@
           }
         }
       }
+    },
+    "Select Translate" : {
+
     },
     "select_query_text_when_window_activate" : {
       "extractionState" : "manual",

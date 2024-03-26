@@ -8,7 +8,6 @@
 
 #import "EZScriptExecutor.h"
 #import "EZError.h"
-#import "EZToast.h"
 
 static NSString *const kEasydictTranslatShortcutName = @"Easydict-Translate-V1.2.0";
 

@@ -12,7 +12,6 @@
 #import "EZScriptExecutor.h"
 #import "EZAudioUtils.h"
 #import "EZCoordinateUtils.h"
-#import "EZToast.h"
 #import "EZLocalStorage.h"
 #import "EZAppleScriptManager.h"
 #import "EZSystemUtility.h"
@@ -195,7 +194,7 @@ static EZEventMonitor *_instance = nil;
 // Monitor global events, Ref: https://blog.csdn.net/ch_soft/article/details/7371136
 - (void)startMonitor {
     [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskKeyDown handler:^NSEvent *_Nullable(NSEvent *_Nonnull event) {
-        if (event.keyCode == kVK_Escape) { // escape
+        if (event.keyCode == tokEscape) { // escape
             NSLog(@"escape");
         }
         return event;
@@ -804,7 +803,7 @@ CGEventRef eventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef eve
             
             //            NSLog(@"keyCode: %d", event.keyCode); // one command key event contains key down and key up
             
-            if (event.keyCode == kVK_Command || event.keyCode == kVK_RightCommand) {
+            if (event.keyCode == _exeCommand || event.keyCode == kFAEditCommand) {
                 [self updateCommandKeyEvents:event];
                 if ([self checkIfDoubleCommandEvents]) {
                     [self dismissPopButton];

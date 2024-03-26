@@ -6,17 +6,17 @@
 //  Copyright © 2023 izual. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "AppDelegate1.h"
 #import "EZShortcut.h"
 #import "MMCrash.h"
 #import "AppDelegate+EZURLScheme.h"
 #import "Easydict-Swift.h"
 
-@interface AppDelegate ()
+@interface AppDelegate1 ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate1
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     MMLogInfo(@"程序启动");
@@ -36,7 +36,7 @@
 
     [EZWindowManager.shared showMainWindowIfNedded];
     
-    [self registerRouters];
+    //[self registerRouters];
     
     [[DarkModeManager manager] updateDarkMode:Configuration.shared.appearance];
     // Change App icon manually.

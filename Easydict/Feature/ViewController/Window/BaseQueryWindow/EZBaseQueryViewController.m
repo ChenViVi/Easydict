@@ -22,7 +22,6 @@
 #import "EZTableRowView.h"
 #import "EZSchemeParser.h"
 #import "EZBaiduTranslate.h"
-#import "EZToast.h"
 #import "DictionaryKit.h"
 #import "EZAppleDictionary.h"
 #import "NSString+EZUtils.h"
@@ -405,9 +404,7 @@ static void dispatch_block_on_main_safely(dispatch_block_t block) {
         if (returnValue.length > 0) {
             message = returnValue;
         }
-        
-        [EZToast showToast:message];
-        
+                
         if (!isSuccess) {
             return;
         }
@@ -455,11 +452,6 @@ static void dispatch_block_on_main_safely(dispatch_block_t block) {
         
         if (actionType == EZActionTypeScreenshotOCR) {
             [inputText copyToPasteboardSafely];
-            
-            dispatch_block_on_main_safely(^{
-                [EZToast showSuccessToast];
-            });
-            
             return;
         }
         
