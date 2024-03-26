@@ -220,6 +220,7 @@
 		27FE980B2B3DD5D1000AD654 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE980A2B3DD5D1000AD654 /* MenuItemView.swift */; };
 		3C9BE21E2BB2A0D5009CFD8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BE21D2BB2A0D5009CFD8A /* AppDelegate.swift */; };
 		3C9BE2202BB2A298009CFD8A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BE21F2BB2A298009CFD8A /* MenuView.swift */; };
+		3C9BE2232BB2B051009CFD8A /* Color_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BE2222BB2B051009CFD8A /* Color_Extensions.swift */; };
 		3CFCE6082BA3EB1600E9F0D1 /* EZAppModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE5F52BA3EB1600E9F0D1 /* EZAppModel.m */; };
 		3CFCE6132BA3EC6800E9F0D1 /* EZMenuItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFCE6122BA3EC6800E9F0D1 /* EZMenuItemManager.m */; };
 		6220AD5B2A82812300BBFB52 /* EZBingService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6220AD5A2A82812300BBFB52 /* EZBingService.m */; };
@@ -659,6 +660,7 @@
 		378E73A7EA8FC8FB9C975A63 /* Pods_EasydictTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasydictTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C9BE21D2BB2A0D5009CFD8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C9BE21F2BB2A298009CFD8A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		3C9BE2222BB2B051009CFD8A /* Color_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_Extensions.swift; sourceTree = "<group>"; };
 		3CFCE5F52BA3EB1600E9F0D1 /* EZAppModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZAppModel.m; sourceTree = "<group>"; };
 		3CFCE5F92BA3EB1600E9F0D1 /* EZAppModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAppModel.h; sourceTree = "<group>"; };
 		3CFCE6112BA3EC6800E9F0D1 /* EZMenuItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZMenuItemManager.h; sourceTree = "<group>"; };
@@ -1866,6 +1868,7 @@
 		27FE98032B3DCA9F000AD654 /* NewApp */ = {
 			isa = PBXGroup;
 			children = (
+				3C9BE2212BB2B02B009CFD8A /* Extensions */,
 				967712EB2B5B93E200105E0F /* Feature */,
 				EA9943E12B534C2900EE7B97 /* Model */,
 				EA9943DD2B534BAE00EE7B97 /* Utility */,
@@ -1912,6 +1915,14 @@
 				03832F532B5F6BE200D0DC64 /* AdvancedTab.swift */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		3C9BE2212BB2B02B009CFD8A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C9BE2222BB2B051009CFD8A /* Color_Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3CFCE5ED2BA3EB1600E9F0D1 /* PerferenceWindow */ = {
@@ -2480,6 +2491,7 @@
 				9627F9382B59956800B1E999 /* GlobalShortcutSetting.swift in Sources */,
 				03BDA7C42A26DA280079D04F /* NSDictionary+RubyDescription.m in Sources */,
 				62ED29A22B15F1F500901F51 /* EZWrapView.m in Sources */,
+				3C9BE2232BB2B051009CFD8A /* Color_Extensions.swift in Sources */,
 				036A0DB82AD8403A006E6D4F /* NSString+EZHandleInputText.m in Sources */,
 				03BDA7C12A26DA280079D04F /* XPMArgumentParser.m in Sources */,
 				03B0231329231FA6001C7E63 /* NSView+HiddenDebug.m in Sources */,

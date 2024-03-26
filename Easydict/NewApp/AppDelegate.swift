@@ -16,7 +16,7 @@ private final class WindowDelegate: NSObject, NSWindowDelegate {
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    let windowWidth: CGFloat = 320
+    let windowWidth: CGFloat = 280
     var statusItem: NSStatusItem!
     var menuStatusToday: NSMenuItem!
     var menuStatusUpcome: NSMenuItem!
@@ -28,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     override init() {
         let windowDelegate = WindowDelegate()
         statusBarWindow = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: windowWidth, height: 460),
+            contentRect: NSRect(x: 0, y: 0, width: windowWidth, height: 330),
             styleMask: [.fullSizeContentView],
             backing: .buffered, defer: false
         )

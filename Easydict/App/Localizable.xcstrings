@@ -11,6 +11,18 @@
         }
       }
     },
+    "⎇ ⇧ S" : {
+
+    },
+    "⎇ A" : {
+
+    },
+    "⎇ D" : {
+
+    },
+    "⎇ S" : {
+
+    },
     "about" : {
       "comment" : "about",
       "localizations" : {
@@ -2381,6 +2393,9 @@
         }
       }
     },
+    "Quit" : {
+
+    },
     "replace_text" : {
       "localizations" : {
         "en" : {
@@ -3021,6 +3036,9 @@
           }
         }
       }
+    },
+    "Setting" : {
+
     },
     "setting_general" : {
       "localizations" : {
@@ -3976,6 +3994,9 @@
           }
         }
       }
+    },
+    "Silent Screenshot OCR" : {
+
     },
     "silent_screenshot_ocr" : {
       "extractionState" : "stale",
