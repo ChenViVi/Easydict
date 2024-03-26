@@ -691,8 +691,32 @@ static EZWindowManager *_instance;
     NSLog(@"selectTextTranslate windowType: %@", @(windowType));
     self.eventMonitor.actionType = EZActionTypeShortcutQuery;
     [self.eventMonitor getSelectedText:^(NSString *_Nullable text) {
-        if (text == nil && ![self.eventMonitor isAccessibilityEnabled]) {
+        if (text == nil) {
             NSLog(@"xxxx app not trust");
+            NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+            if (!appName) {
+                appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+            }
+            NSAlert *alert = [[NSAlert alloc] init];
+            alert.messageText = [NSString stringWithFormat:@"%@ needs access to your selected texts to translate for you, if you granted permission, please restart app", appName];
+            [alert addButtonWithTitle:@"Grant"];
+            [alert addButtonWithTitle:@"Restart App"];
+            [alert addButtonWithTitle:@"Don't Allow"];
+            [alert beginSheetModalForWindow:[EZWindowManager shared].mainWindow completionHandler:^(NSInteger returnCode){
+                if(returnCode == NSAlertFirstButtonReturn) {
+                    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"]];
+                    return;
+                }
+                if(returnCode == NSAlertSecondButtonReturn) {
+                    NSTask *task = [[NSTask alloc] init];
+                    [task setLaunchPath:@"/bin/sh"];
+                    NSString *cmd = [NSString stringWithFormat:@"osascript -e 'quit app \"%@\"' && open -a %@", appName, appName];
+                    [task setArguments:@[@"-c", cmd]];
+                    [task launch];
+                    [task waitUntilExit];
+                    return;
+                }
+            }];
             return;
         }
         self.actionType = self.eventMonitor.actionType;
