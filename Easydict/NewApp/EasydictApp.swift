@@ -18,7 +18,7 @@ import SwiftUI
 // }
 @main
 struct EasydictApp: App {
-    @NSApplicationDelegateAdaptor(NewApp.self) var appDelegate
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         Settings {

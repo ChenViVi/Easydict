@@ -15,7 +15,7 @@ private final class WindowDelegate: NSObject, NSWindowDelegate {
     }
 }
 
-class NewApp: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate {
     let windowWidth: CGFloat = 320
     var statusItem: NSStatusItem!
     var menuStatusToday: NSMenuItem!
@@ -52,7 +52,6 @@ class NewApp: NSObject, NSApplicationDelegate {
                 self.isWindowShowed = false
             }
         }
-        print("xxxxxxxx ???? 1")
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         setMenuButtonImage()
         statusItem.button?.action = #selector(clickMenu)
