@@ -691,7 +691,7 @@ static EZWindowManager *_instance;
     NSLog(@"selectTextTranslate windowType: %@", @(windowType));
     self.eventMonitor.actionType = EZActionTypeShortcutQuery;
     [self.eventMonitor getSelectedText:^(NSString *_Nullable text) {
-        if (text == nil) {
+        if (text == nil && ![self.eventMonitor isAccessibilityEnabled]) {
             NSLog(@"xxxx app not trust");
             NSString *appName = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
             if (!appName) {
