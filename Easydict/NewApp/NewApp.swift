@@ -21,7 +21,6 @@ class NewApp: NSObject, NSApplicationDelegate {
     var menuStatusToday: NSMenuItem!
     var menuStatusUpcome: NSMenuItem!
     var menuStatusSep0: NSMenuItem!
-    var timer: Timer!
     var point: NSPoint?
     var statusBarWindow: NSWindow
     var isWindowShowed = false
@@ -43,6 +42,9 @@ class NewApp: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_: Notification) {
+        MMCrash.registerHandler()
+        EZLog.setupCrashService()
+        EZLog.logAppInfo()
         NotificationCenter.default.addObserver(self, selector: #selector(clickMenu(_:)), name: Notification.Name(kNotificationOpenStatusWindow), object: nil)
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { _ in
             if self.isWindowShowed {
@@ -60,6 +62,15 @@ class NewApp: NSObject, NSApplicationDelegate {
     func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
         clickMenu(nil)
         return true
+    }
+
+    func applicationWillTerminate(_: Notification) {
+        EZMenuItemManager.shared().remove()
+    }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_: NSApplication) -> Bool {
+        EZWindowManager.shared().closeMainWindowIfNeeded()
+        return false
     }
 
     @objc func clickMenu(_: Any?) {
@@ -132,9 +143,5 @@ class NewApp: NSObject, NSApplicationDelegate {
                 statusItem.button?.effectiveAppearance.name == NSAppearance.Name.accessibilityHighContrastVibrantDark)
         }
         return statusItem.button?.effectiveAppearance.name == NSAppearance.Name.vibrantDark
-    }
-
-    deinit {
-        self.timer.invalidate()
     }
 }
