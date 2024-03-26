@@ -708,12 +708,7 @@ static EZWindowManager *_instance;
                     return;
                 }
                 if(returnCode == NSAlertSecondButtonReturn) {
-                    NSTask *task = [[NSTask alloc] init];
-                    [task setLaunchPath:@"/bin/sh"];
-                    NSString *cmd = [NSString stringWithFormat:@"osascript -e 'quit app \"%@\"' && open -a %@", appName, appName];
-                    [task setArguments:@[@"-c", cmd]];
-                    [task launch];
-                    [task waitUntilExit];
+                    [self relaunchAfterDelay:1];
                     return;
                 }
             }];
@@ -733,6 +728,15 @@ static EZWindowManager *_instance;
         
         [self showFloatingWindowType:windowType queryText:self.selectedText];
     }];
+}
+
+- (void)relaunchAfterDelay:(NSTimeInterval)seconds {
+    NSTask *task = [[NSTask alloc] init];
+    [task setLaunchPath:@"/bin/sh"];
+    [task setArguments:@[@"-c", [NSString stringWithFormat:@"sleep %f; open \"%@\"", seconds, [[NSBundle mainBundle] bundlePath]]]];
+    [task launch];
+    [NSApp terminate:nil];
+    exit(0);
 }
 
 - (BOOL)canRecord {
@@ -769,6 +773,7 @@ static EZWindowManager *_instance;
                 return;
             }
             if(returnCode == NSAlertSecondButtonReturn) {
+                [self relaunchAfterDelay:1];
                 return;
             }
         }];
