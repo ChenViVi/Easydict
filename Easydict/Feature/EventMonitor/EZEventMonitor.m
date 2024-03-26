@@ -16,7 +16,7 @@
 #import "EZAppleScriptManager.h"
 #import "EZSystemUtility.h"
 #import "Easydict-Swift.h"
-
+#import "Carbon/Carbon.h"
 static CGFloat const kDismissPopButtonDelayTime = 0.1;
 static NSTimeInterval const kDelayGetSelectedTextTime = 0.1;
 
@@ -194,7 +194,7 @@ static EZEventMonitor *_instance = nil;
 // Monitor global events, Ref: https://blog.csdn.net/ch_soft/article/details/7371136
 - (void)startMonitor {
     [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskKeyDown handler:^NSEvent *_Nullable(NSEvent *_Nonnull event) {
-        if (event.keyCode == tokEscape) { // escape
+        if (event.keyCode == kVK_Escape) { // escape
             NSLog(@"escape");
         }
         return event;
@@ -803,7 +803,7 @@ CGEventRef eventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef eve
             
             //            NSLog(@"keyCode: %d", event.keyCode); // one command key event contains key down and key up
             
-            if (event.keyCode == _exeCommand || event.keyCode == kFAEditCommand) {
+            if ([event keyCode] == kVK_Command || [event keyCode] == kVK_RightCommand) {
                 [self updateCommandKeyEvents:event];
                 if ([self checkIfDoubleCommandEvents]) {
                     [self dismissPopButton];
