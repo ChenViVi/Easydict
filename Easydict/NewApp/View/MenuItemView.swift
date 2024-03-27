@@ -210,8 +210,3 @@ struct MenuItemView: View {
         }
     }
 }
-
-@available(macOS 13, *)
-#Preview {
-    MenuItemView()
-}

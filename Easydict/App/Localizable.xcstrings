@@ -956,7 +956,6 @@
       }
     },
     "Easydict" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -967,7 +966,6 @@
       }
     },
     "Easydict 🍃" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {

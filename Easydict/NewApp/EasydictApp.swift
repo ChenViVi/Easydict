@@ -10,19 +10,48 @@ import Defaults
 import Sparkle
 import SwiftUI
 
-// @main
-// enum EasydictCmpatibilityEntry {
-//    static func main() {
-//        EasydictApp.main()
-//    }
-// }
 @main
-struct EasydictApp: App {
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+enum EasydictCmpatibilityEntry {
+    static func main() {
+        EasydictApp.main()
+    }
+}
 
+struct EasydictApp: App {
+    // Use `@Default` will cause a purple warning and continuously call `set` of it.
+    // I'm not sure why. Just leave `AppStorage` here.
+    @AppStorage(Defaults.Key<Bool>.hideMenuBarIcon.name)
+    private var hideMenuBar = Defaults.Key<Bool>.hideMenuBarIcon.defaultValue
+
+    @Default(.selectedMenuBarIcon)
+    private var menuBarIcon
+    // @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
-        Settings {
-            EmptyView()
+        if #available(macOS 13, *) {
+            MenuBarExtra(isInserted: $hideMenuBar.toggledValue) {
+                MenuItemView()
+            } label: {
+                Label {
+                    Text("Easydict")
+                } icon: {
+                    Image(menuBarIcon.rawValue)
+                        .resizable()
+                    #if DEBUG
+                        .renderingMode(.original)
+                    #else
+                        .renderingMode(.template)
+                    #endif
+                        .scaledToFit()
+                }
+                .help("Easydict 🍃")
+            }
+            .menuBarExtraStyle(.menu)
+            .commands {
+                EasyDictMainMenu() // main menu
+            }
+            Settings {
+                SettingView()
+            }
         }
     }
 }
