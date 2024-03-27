@@ -45,6 +45,7 @@ struct EasydictApp: App {
                 }
                 .help("Easydict 🍃")
             }
+            //.menuBarExtraStyle(.window)
             .menuBarExtraStyle(.menu)
             .commands {
                 EasyDictMainMenu() // main menu
