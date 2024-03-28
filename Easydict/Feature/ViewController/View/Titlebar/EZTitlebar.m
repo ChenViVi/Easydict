@@ -181,11 +181,11 @@
     NSColor *pinNormalLightTintColor = [NSColor mm_colorWithHexString:@"#797A7F"];
     NSColor *pinNormalDarkTintColor = [NSColor mm_colorWithHexString:@"#C0C1C4"];
     
-    NSImage *normalLightImage = [[NSImage imageNamed:@"new_pin_normal"] resizeToSize:imageSize];
+    NSImage *normalLightImage = [[NSImage imageWithSystemSymbolName:@"pin" accessibilityDescription:@"Float"] resizeToSize:imageSize];
     normalLightImage = [normalLightImage imageWithTintColor:pinNormalLightTintColor];
     NSImage *normalDarkImage = [normalLightImage imageWithTintColor:pinNormalDarkTintColor];
     
-    NSImage *selectedImage = [[NSImage imageNamed:@"new_pin_selected"] resizeToSize:imageSize];
+    NSImage *selectedImage = [[[NSImage imageWithSystemSymbolName:@"pin" accessibilityDescription:@"Float"] imageWithTintColor:[NSColor blueColor]] resizeToSize:imageSize];
     
     mm_weakify(self);
     [self.pinButton excuteLight:^(EZHoverButton *button) {
