@@ -804,12 +804,62 @@ static NSString *const kAppleDictionaryURIScheme = @"x-dictionary";
         lastView = resultLabel;
     }
     
-    EZAudioButton *audioButton = [[EZAudioButton alloc] init];
-    [self addSubview:audioButton];
+    CGFloat audioButtonLeftOffset = EZAudioButtonLeftMargin_6;
+    CGFloat audioButtonTopOffset = 6;
+    CGFloat buttonPadding = EZAudioButtonRightPadding_1;
+    
+    EZOpenLinkButton *linkButton = [[EZOpenLinkButton alloc] init];
+    [self addSubview:linkButton];
+    
+    NSImage *linkImage = [NSImage ez_imageWithSymbolName:@"link"];
+    linkButton.image = linkImage;
+    
+    NSString *toolTip = NSLocalizedString(@"open_web_link", nil);
+    if (result.serviceType == EZServiceTypeAppleDictionary) {
+        toolTip = NSLocalizedString(@"open_in_apple_dictionary", nil);
+    }
+    linkButton.toolTip = toolTip;
+    
+    linkButton.link = [result.service wordLink:result.queryModel];
+    
+    [linkButton excuteLight:^(NSButton *linkButton) {
+        linkButton.image = [linkButton.image imageWithTintColor:[NSColor ez_imageTintLightColor]];
+    } dark:^(NSButton *linkButton) {
+        linkButton.image = [linkButton.image imageWithTintColor:[NSColor ez_imageTintDarkColor]];
+    }];
+    linkButton.mas_key = @"result_linkButton";
+    
+    [linkButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        if (lastView) {
+            make.top.equalTo(lastView.mas_bottom).offset(audioButtonTopOffset);
+        } else {
+            make.top.equalTo(self).offset(audioButtonTopOffset);
+        }
+        make.right.offset(-audioButtonLeftOffset);
+        make.width.height.mas_equalTo(EZAudioButtonWidthHeight_24);
+    }];
+    lastView = linkButton;
     
     BOOL hasTranslatedText = result.translatedText.length > 0;
-    audioButton.enabled = hasTranslatedText;
     
+    
+    EZCopyButton *textCopyButton = [[EZCopyButton alloc] init];
+    [self addSubview:textCopyButton];
+    textCopyButton.enabled = hasTranslatedText | result.HTMLString.length;
+    
+    [textCopyButton setClickBlock:^(EZButton *_Nonnull button) {
+        NSLog(@"copyActionBlock");
+        [result.copiedText copyAndShowToast:YES];
+    }];
+    textCopyButton.mas_key = @"result_copyButton";
+    [textCopyButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(linkButton.mas_left).offset(buttonPadding);
+        make.width.height.bottom.equalTo(linkButton);
+    }];
+    
+    EZAudioButton *audioButton = [[EZAudioButton alloc] init];
+    [self addSubview:audioButton];
+    audioButton.enabled = hasTranslatedText;
     audioButton.audioPlayer = self.result.service.audioPlayer;
     
     [audioButton setPlayStatus:^(BOOL isPlaying, EZAudioButton *audioButton) {
@@ -837,71 +887,17 @@ static NSString *const kAppleDictionaryURIScheme = @"x-dictionary";
     }];
     
     audioButton.mas_key = @"result_audioButton";
-    
-    EZCopyButton *textCopyButton = [[EZCopyButton alloc] init];
-    [self addSubview:textCopyButton];
-    textCopyButton.enabled = hasTranslatedText | result.HTMLString.length;
-    
-    [textCopyButton setClickBlock:^(EZButton *_Nonnull button) {
-        NSLog(@"copyActionBlock");
-        [result.copiedText copyAndShowToast:YES];
-    }];
-    textCopyButton.mas_key = @"result_copyButton";
-    
-    CGFloat audioButtonLeftOffset = EZAudioButtonLeftMargin_6;
-    CGFloat audioButtonTopOffset = 6;
-    CGFloat buttonPadding = EZAudioButtonRightPadding_1;
-    
     [audioButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (lastView) {
-            make.top.equalTo(lastView.mas_bottom).offset(audioButtonTopOffset);
-        } else {
-            make.top.equalTo(self).offset(audioButtonTopOffset);
-        }
-        
-        make.left.offset(audioButtonLeftOffset);
-        make.width.height.mas_equalTo(EZAudioButtonWidthHeight_24);
+        make.right.equalTo(textCopyButton.mas_left).offset(buttonPadding);
+        make.width.height.bottom.equalTo(textCopyButton);
     }];
-    lastView = audioButton;
     
     self.bottomViewHeight = audioButtonTopOffset + EZAudioButtonWidthHeight_24 + EZAudioButtonBottomMargin_4;
     
     height += self.bottomViewHeight;
     _viewHeight = height;
     //    NSLog(@"word result view height: %.1f", height);
-    
-    
-    [textCopyButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(audioButton.mas_right).offset(buttonPadding);
-        make.width.height.bottom.equalTo(audioButton);
-    }];
-    
-    EZOpenLinkButton *linkButton = [[EZOpenLinkButton alloc] init];
-    [self addSubview:linkButton];
-    
-    NSImage *linkImage = [NSImage ez_imageWithSymbolName:@"link"];
-    linkButton.image = linkImage;
-    
-    NSString *toolTip = NSLocalizedString(@"open_web_link", nil);
-    if (result.serviceType == EZServiceTypeAppleDictionary) {
-        toolTip = NSLocalizedString(@"open_in_apple_dictionary", nil);
-    }
-    linkButton.toolTip = toolTip;
-    
-    linkButton.link = [result.service wordLink:result.queryModel];
-    
-    [linkButton excuteLight:^(NSButton *linkButton) {
-        linkButton.image = [linkButton.image imageWithTintColor:[NSColor ez_imageTintLightColor]];
-    } dark:^(NSButton *linkButton) {
-        linkButton.image = [linkButton.image imageWithTintColor:[NSColor ez_imageTintDarkColor]];
-    }];
-    linkButton.mas_key = @"result_linkButton";
-    
-    [linkButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(textCopyButton.mas_right).offset(buttonPadding);
-        make.width.height.bottom.equalTo(audioButton);
-    }];
-    
+        
     EZReplaceTextButton *replaceTextButton = [[EZReplaceTextButton alloc] init];
     [self addSubview:replaceTextButton];
     replaceTextButton.hidden = !result.showReplaceButton;
