@@ -901,8 +901,8 @@ static NSString *const kAppleDictionaryURIScheme = @"x-dictionary";
     replaceTextButton.mas_key = @"replaceTextButton";
     
     [replaceTextButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(linkButton.mas_right).offset(buttonPadding);
-        make.width.height.bottom.equalTo(audioButton);
+        make.right.equalTo(audioButton.mas_left).offset(buttonPadding);
+        make.width.height.bottom.equalTo(linkButton);
     }];
     
     // webView height need time to calculate, and the value will be called back later.
