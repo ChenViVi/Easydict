@@ -162,7 +162,6 @@
     self.clearButton = clearButton;
     
     NSImage *clearImage = [NSImage ez_imageWithSymbolName:@"xmark.circle.fill"];
-    clearImage = [clearImage imageWithTintColor:[NSColor mm_colorWithHexString:@"#868686"]];
     clearButton.image = clearImage;
     
     NSString *clearAction = NSLocalizedString(@"clear_all", nil);
@@ -249,17 +248,6 @@
 - (void)updateConstraints {
     [self updateCustomLayout];
     
-    [self.audioButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.offset(-EZAudioButtonBottomMargin_4);
-        make.left.offset(EZAudioButtonLeftMargin_6);
-        make.width.height.mas_equalTo(EZAudioButtonWidthHeight_24);
-    }];
-    
-    [self.textCopyButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.audioButton.mas_right).offset(EZAudioButtonRightPadding_1);
-        make.width.height.bottom.equalTo(self.audioButton);
-    }];
-    
     [self updateDetectButton];
     
     
@@ -272,9 +260,19 @@
         make.height.mas_greaterThanOrEqualTo(textViewHeight);
     }];
     
-    [self.clearButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.textCopyButton mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.right.bottom.equalTo(self).offset(-4);
         make.width.height.mas_equalTo(24);
+    }];
+    
+    [self.audioButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.textCopyButton.mas_left).offset(EZAudioButtonRightPadding_1);
+        make.width.height.bottom.equalTo(self.textCopyButton);
+    }];
+    
+    [self.clearButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.audioButton.mas_left).offset(EZAudioButtonRightPadding_1);
+        make.width.height.bottom.equalTo(self.audioButton);
     }];
     
     [super updateConstraints];
