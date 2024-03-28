@@ -914,6 +914,17 @@ static NSString *const kAppleDictionaryURIScheme = @"x-dictionary";
             _viewHeight = 0;
         }
     }
+    NSView *viewLine = [[NSView alloc] init];
+    [self addSubview:viewLine];
+    viewLine.wantsLayer = YES;
+    viewLine.layer.backgroundColor = [NSColor colorWithRed:213/255.0 green:213/255.0 blue:213/255.0 alpha:1.0].CGColor;
+    [viewLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(audioButton.mas_bottom).offset(6);
+        make.height.equalTo(@(1));
+        make.left.equalTo(self.mas_left).offset(4);
+        make.right.equalTo(self.mas_right).offset(-4);
+    }];
+    lastView = viewLine;
 }
 
 - (NSView *)buildSynonymsAndAntonymsView:(NSString *)title parts:(NSArray<EZTranslatePart *> *)parts textColor:(NSColor *)typeTextColor typeTextFont:(NSFont *)typeTextFont height:(CGFloat *)height lastView:(NSView *)lastView {
