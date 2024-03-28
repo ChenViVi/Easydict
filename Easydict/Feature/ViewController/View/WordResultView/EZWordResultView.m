@@ -56,14 +56,7 @@ static NSString *const kAppleDictionaryURIScheme = @"x-dictionary";
 - (instancetype)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.wantsLayer = YES;
-        self.layer.cornerRadius = EZCornerRadius_8;
         self.fontSizeRatio = Configuration.shared.fontSizeRatio;
-        [self.layer excuteLight:^(CALayer *layer) {
-            layer.backgroundColor = [NSColor ez_resultViewBgLightColor].CGColor;
-        } dark:^(CALayer *layer) {
-            layer.backgroundColor = [NSColor ez_resultViewBgDarkColor].CGColor;
-        }];
     }
     return self;
 }
@@ -430,13 +423,6 @@ static NSString *const kAppleDictionaryURIScheme = @"x-dictionary";
                 
                 tagContentView = [[NSView alloc] init];
                 [tagScrollView addSubview:tagContentView];
-                tagContentView.wantsLayer = YES;
-                [tagContentView.layer excuteLight:^(CALayer *layer) {
-                    layer.backgroundColor = [NSColor ez_resultViewBgLightColor].CGColor;
-                } dark:^(CALayer *layer) {
-                    layer.backgroundColor = [NSColor ez_resultViewBgDarkColor].CGColor;
-                }];
-                
                 tagContentView.height = newSize.height;
                 tagScrollView.documentView = tagContentView;
                 tagScrollView.horizontalScrollElasticity = NSScrollElasticityNone;
@@ -1206,36 +1192,6 @@ static NSString *const kAppleDictionaryURIScheme = @"x-dictionary";
             self.result.didFinishLoadingHTMLBlock();
         }
     }];
-}
-
-- (void)updateWebViewBackgroundColorWithDarkMode:(BOOL)isDark {
-    NSString *lightTextColorString = [NSColor mm_hexStringFromColor:[NSColor ez_resultTextLightColor]];
-    NSString *lightBackgroundColorString = [NSColor mm_hexStringFromColor:[NSColor ez_resultViewBgLightColor]];
-    
-    NSString *darkTextColorString = [NSColor mm_hexStringFromColor:[NSColor ez_resultTextDarkColor]];
-    NSString *darkBackgroundColorString = [NSColor mm_hexStringFromColor:[NSColor ez_resultViewBgDarkColor]];
-    
-    NSString *textColorString = isDark ? darkTextColorString : lightTextColorString;
-    NSString *backgroundColorString = isDark ? darkBackgroundColorString : lightBackgroundColorString;
-    
-    NSString *updateBodyColorJSCode = [self jsCodeOfUpdateBodyTextColor:textColorString backgroundColor:backgroundColorString];
-    NSString *updateIframeColorJSCode = [self jsCodeOfUpdateAllIframeTextColor:textColorString backgroundColor:backgroundColorString];
-    
-    NSString *jsCode = [NSString stringWithFormat:@"%@ %@", updateBodyColorJSCode, updateIframeColorJSCode];
-    
-    [self evaluateJavaScript:jsCode];
-}
-
-
-- (NSString *)jsCodeOfUpdateAllIframeTextColor:(NSString *)color backgroundColor:(NSString *)backgroundColor {
-    NSString *jsCode = [NSString stringWithFormat:@""
-                        "var iframes = document.querySelectorAll('iframe');"
-                        "for (var i = 0; i < iframes.length; i++) {"
-                        "   iframes[i].contentDocument.body.style.webkitTextFillColor = '%@';"
-                        "   iframes[i].contentDocument.body.style.backgroundColor = '%@';"
-                        "};", color, backgroundColor];
-    
-    return jsCode;
 }
 
 - (NSString *)jsCodeOfUpdateBodyTextColor:(NSString *)color backgroundColor:(NSString *)backgroundColor {

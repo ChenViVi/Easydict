@@ -6,8 +6,7 @@
 
   <style>
     :root {
-      --light-background-color: #f6f6f6;
-      --dark-background-color: #303132;
+
 
       --light-text-color: #262626;
       --dark-text-color: #e0e0e0;
@@ -30,7 +29,6 @@
       font-family: 'system-ui';
       margin: 0px;
       color: var(--light-text-color);
-      background-color: var(--light-background-color);
     }
 
     .big-word-title {
@@ -182,24 +180,6 @@
           // console.log(`originalBorderColor: ${originalBorderColor}`);
           // console.log(`newBorderColor: ${newBorderColor}`);
         }
-      }
-
-      function isNotCustomBackgroundColor(color) {
-        var rootStyles = getComputedStyle(document.documentElement);
-        var lightBackgroundColor = rootStyles.getPropertyValue(
-          "--light-background-color"
-        );
-        var darkBackgroundColor = rootStyles.getPropertyValue(
-          "--dark-background-color"
-        );
-
-        // console.log(`color: ${color}`);
-        // console.log(`lightBackgroundColor: ${lightBackgroundColor}`);
-        // console.log(`darkBackgroundColor: ${darkBackgroundColor}`);
-
-        return (
-          color !== lightBackgroundColor && color !== darkBackgroundColor
-        );
       }
 
       function convertColorValue(color, isDarkMode) {
@@ -399,45 +379,6 @@
       for (var i = 0; i < iframes.length; i++) {
         var iframe = iframes[i];
         convertColorsInIframe(iframe, isDarkMode);
-      }
-    }
-
-    // update body background color and all iframe background color
-    function updateBackgroundColor(isDarkMode) {
-      var rootStyles = getComputedStyle(document.documentElement);
-      var lightBackgroundColor = rootStyles.getPropertyValue(
-        "--light-background-color"
-      );
-      var darkBackgroundColor = rootStyles.getPropertyValue(
-        "--dark-background-color"
-      );
-
-      // update body background color
-      var newBackgroundColor = isDarkMode
-        ? darkBackgroundColor
-        : lightBackgroundColor;
-      document.body.style.backgroundColor = newBackgroundColor;
-
-      // update all iframe background color
-      var iframes = document.querySelectorAll("iframe");
-      for (var i = 0; i < iframes.length; i++) {
-        var iframe = iframes[i];
-        var iframeDocument = iframe.contentWindow.document;
-        var newBackgroundColor = isDarkMode
-          ? darkBackgroundColor
-          : lightBackgroundColor;
-        iframeDocument.body.style.backgroundColor = newBackgroundColor;
-
-        // update iframe border color
-        var lightBorderColor = rootStyles.getPropertyValue(
-          "--light-border-color"
-        );
-        var darkBorderColor = rootStyles.getPropertyValue(
-          "--dark-border-color"
-        );
-
-        var newBorderColor = isDarkMode ? darkBorderColor : lightBorderColor;
-        iframe.style.borderColor = newBorderColor;
       }
     }
 

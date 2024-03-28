@@ -60,6 +60,7 @@
 
 // Result view background color
 + (NSColor *)ez_resultViewBgLightColor {
+    //return [NSColor mm_colorWithHexString:@"#3c3229"];
     return [NSColor mm_colorWithHexString:@"#F6F6F6"];
 }
 + (NSColor *)ez_resultViewBgDarkColor {

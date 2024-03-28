@@ -22,7 +22,6 @@
 @property (nonatomic, strong) NSTextField *serviceNameLabel;
 @property (nonatomic, strong) NSImageView *errorImageView;
 @property (nonatomic, strong) EZLoadingAnimationView *loadingView;
-@property (nonatomic, strong) EZHoverButton *arrowButton;
 @property (nonatomic, strong) EZHoverButton *stopButton;
 @property (nonatomic, strong) EZHoverButton *retryButton;
 
@@ -39,25 +38,10 @@
 }
 
 - (void)setup {
-    self.wantsLayer = YES;
-    self.layer.cornerRadius = EZCornerRadius_8;
-    [self.layer excuteLight:^(CALayer *layer) {
-        layer.backgroundColor = [NSColor ez_resultViewBgLightColor].CGColor;
-    } dark:^(CALayer *layer) {
-        layer.backgroundColor = [NSColor ez_resultViewBgDarkColor].CGColor;
-    }];
-
     mm_weakify(self);
-
     self.topBarView = [NSView mm_make:^(NSView *_Nonnull view) {
         mm_strongify(self);
         [self addSubview:view];
-        view.wantsLayer = YES;
-        [view.layer excuteLight:^(CALayer *layer) {
-            layer.backgroundColor = [NSColor ez_titleBarBgLightColor].CGColor;
-        } dark:^(CALayer *layer) {
-            layer.backgroundColor = [NSColor ez_titleBarBgDarkColor].CGColor;
-        }];
     }];
     self.topBarView.mas_key = @"topBarView";
 
@@ -104,42 +88,6 @@
         mm_strongify(self);
         [self.loadingView startLoading:NO];
     }];
-
-    EZHoverButton *arrowButton = [[EZHoverButton alloc] init];
-    self.arrowButton = arrowButton;
-    [self addSubview:arrowButton];
-    NSImage *image = [NSImage imageNamed:@"arrow-down"];
-    arrowButton.image = image;
-    self.arrowButton.mas_key = @"arrowButton";
-
-    [arrowButton setClickBlock:^(EZButton *_Nonnull button) {
-        mm_strongify(self);
-
-        if (!self.result.hasShowingResult && self.result.queryModel.queryText.length == 0) {
-            NSLog(@"query text is empty");
-            return;
-        }
-
-        BOOL oldIsShowing = self.result.isShowing;
-        BOOL newIsShowing = !oldIsShowing;
-        self.result.isShowing = newIsShowing;
-        NSLog(@"点击 arrowButton, show: %@", @(newIsShowing));
-        
-        if (newIsShowing) {
-            self.result.manulShow = YES;
-        }
-
-        [self updateArrowButton];
-
-        if (self.clickArrowBlock) {
-            self.clickArrowBlock(self.result);
-        }
-
-        // TODO: add arrow roate animation.
-
-        //        [self rotateArrowButton];
-    }];
-    
     
     EZHoverButton *stopButton = [[EZHoverButton alloc] init];
     self.stopButton = stopButton;
@@ -181,8 +129,6 @@
 
     CGSize iconSize = CGSizeMake(16, 16);
 
-    [self updateArrowButton];
-
     [self.topBarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self);
         make.height.mas_equalTo(EZResultViewMiniHeight);
@@ -212,20 +158,14 @@
     }];
 
 
-    [self.arrowButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.stopButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.topBarView.mas_right).offset(-5);
         make.centerY.equalTo(self.topBarView);
         make.size.mas_equalTo(CGSizeMake(22, 22));
     }];
     
-    [self.stopButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.arrowButton.mas_left).offset(-5);
-        make.centerY.equalTo(self.topBarView);
-        make.size.mas_equalTo(CGSizeMake(22, 22));
-    }];
-    
     [self.retryButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.arrowButton.mas_left).offset(-5);
+        make.right.equalTo(self.stopButton.mas_left).offset(-5);
         make.centerY.equalTo(self.topBarView);
         make.size.mas_equalTo(CGSizeMake(22, 22));
     }];
@@ -309,7 +249,6 @@
     
     [self updateRetryButton];
     [self updateStopButton];
-    [self updateArrowButton];
 }
 
 - (void)updateErrorImage {
@@ -346,38 +285,7 @@
     self.stopButton.hidden = !showStopButton;
 }
 
-- (void)updateArrowButton {
-    NSImage *arrowImage = [NSImage imageNamed:@"arrow-left"];
-    if (self.result.isShowing) {
-        arrowImage = [NSImage imageNamed:@"arrow-down"];
-    }
-    
-    self.arrowButton.toolTip = self.result.isShowing ? NSLocalizedString(@"hide", nil) : NSLocalizedString(@"show", nil);
-    
-    [self.arrowButton excuteLight:^(NSButton *button) {
-        button.image = [arrowImage imageWithTintColor:[NSColor ez_imageTintLightColor]];
-    } dark:^(NSButton *button) {
-        button.image = [arrowImage imageWithTintColor:[NSColor ez_imageTintDarkColor]];
-    }];
-}
-
-
 #pragma mark - Animation
-
-- (void)rotateArrowButton {
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-    animation.fromValue = @(0);
-    animation.toValue = [NSNumber numberWithFloat:-90 * (M_PI / 180.0f)];
-    animation.cumulative = YES;
-    animation.repeatCount = 1;
-    animation.duration = 1;
-
-    CGRect oldRect = self.arrowButton.layer.frame;
-    self.arrowButton.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
-    self.arrowButton.layer.frame = oldRect;
-
-    [self.arrowButton.layer addAnimation:animation forKey:@"animation"];
-}
 
 // add color animation for view. color from white to gray
 - (void)addColorAnimationForView:(NSView *)view {
