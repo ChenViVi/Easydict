@@ -121,13 +121,31 @@ struct MenuView: View {
                     VStack {
                         Spacer()
                         Image(systemName: "gear")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.secondary)
+                            .frame(width: 24, height: 24)
                         Text("Setting")
-                            .foregroundColor(Color.black)
+                            .font(.subheadline)
+                            .foregroundColor(Color.secondary)
                         Spacer()
                     }
                     .frame(maxWidth: .infinity)
-                    .padding()
+                    .background(Color.bgMenuItem)
+                    .cornerRadius(10)
+                    .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
+                }
+                .buttonStyle(.borderless)
+                Button(action: {}) {
+                    VStack {
+                        Spacer()
+                        Image(systemName: "dock.rectangle")
+                            .foregroundColor(Color.secondary)
+                            .frame(width: 24, height: 24)
+                        Text("Show Window")
+                            .font(.subheadline)
+                            .foregroundColor(Color.secondary)
+                        Spacer()
+                    }
+                    .frame(maxWidth: .infinity)
                     .background(Color.bgMenuItem)
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
@@ -139,13 +157,14 @@ struct MenuView: View {
                     VStack {
                         Spacer()
                         Image(systemName: "rectangle.portrait.and.arrow.right")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.secondary)
+                            .frame(width: 24, height: 24)
                         Text("Quit")
-                            .foregroundColor(Color.black)
+                            .font(.subheadline)
+                            .foregroundColor(Color.secondary)
                         Spacer()
                     }
                     .frame(maxWidth: .infinity)
-                    .padding()
                     .background(Color.bgMenuItem)
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)

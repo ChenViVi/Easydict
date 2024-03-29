@@ -16,7 +16,7 @@ private final class WindowDelegate: NSObject, NSWindowDelegate {
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    let windowWidth: CGFloat = 280
+    let windowWidth: CGFloat = 330
     var statusItem: NSStatusItem!
     var menuStatusToday: NSMenuItem!
     var menuStatusUpcome: NSMenuItem!

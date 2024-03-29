@@ -25,35 +25,38 @@ struct EasydictApp: App {
 
     @Default(.selectedMenuBarIcon)
     private var menuBarIcon
-    // @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
-        if #available(macOS 13, *) {
-            MenuBarExtra(isInserted: $hideMenuBar.toggledValue) {
-                MenuItemView()
-            } label: {
-                Label {
-                    Text("Easydict")
-                } icon: {
-                    Image(menuBarIcon.rawValue)
-                        .resizable()
-                    #if DEBUG
-                        .renderingMode(.original)
-                    #else
-                        .renderingMode(.template)
-                    #endif
-                        .scaledToFit()
-                }
-                .help("Easydict 🍃")
-            }
-            // .menuBarExtraStyle(.window)
-            .menuBarExtraStyle(.menu)
-            .commands {
-                EasyDictMainMenu() // main menu
-            }
-            Settings {
-                SettingView()
-            }
+        Settings {
+            EmptyView()
         }
+//        if #available(macOS 13, *) {
+//            MenuBarExtra(isInserted: $hideMenuBar.toggledValue) {
+//                MenuItemView()
+//            } label: {
+//                Label {
+//                    Text("Easydict")
+//                } icon: {
+//                    Image(menuBarIcon.rawValue)
+//                        .resizable()
+//                    #if DEBUG
+//                        .renderingMode(.original)
+//                    #else
+//                        .renderingMode(.template)
+//                    #endif
+//                        .scaledToFit()
+//                }
+//                .help("Easydict 🍃")
+//            }
+//            // .menuBarExtraStyle(.window)
+//            .menuBarExtraStyle(.menu)
+//            .commands {
+//                EasyDictMainMenu() // main menu
+//            }
+//            Settings {
+//                SettingView()
+//            }
+//        }
     }
 }
 
