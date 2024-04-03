@@ -170,6 +170,66 @@
         }
     }
     
+    EZOpenLinkButton *screenOcrSilentButton = [[EZOpenLinkButton alloc] init];
+    [self addSubview:screenOcrSilentButton];
+    screenOcrSilentButton.image = [[NSImage imageWithSystemSymbolName:@"dot.viewfinder" accessibilityDescription:nil] resizeToSize:imageSize];
+    screenOcrSilentButton.contentTintColor = NSColor.clearColor;
+    [screenOcrSilentButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(quickLinkButtonTopOffset);
+        make.size.mas_equalTo(buttonSize);
+        if (lastView) {
+            make.right.equalTo(lastView.mas_left).offset(-kButtonPadding_4);
+        } else {
+            make.right.equalTo(self).offset(-quickLinkButtonRightOffset);
+        }
+    }];
+    lastView = screenOcrSilentButton;
+    
+    EZOpenLinkButton *pasteboardButton = [[EZOpenLinkButton alloc] init];
+    [self addSubview:pasteboardButton];
+    pasteboardButton.image = [[NSImage imageWithSystemSymbolName:@"highlighter" accessibilityDescription:nil] resizeToSize:imageSize];
+    pasteboardButton.contentTintColor = NSColor.clearColor;
+    [pasteboardButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(quickLinkButtonTopOffset);
+        make.size.mas_equalTo(buttonSize);
+        if (lastView) {
+            make.right.equalTo(lastView.mas_left).offset(-kButtonPadding_4);
+        } else {
+            make.right.equalTo(self).offset(-quickLinkButtonRightOffset);
+        }
+    }];
+    lastView = pasteboardButton;
+    
+    EZOpenLinkButton *screenOcrButton = [[EZOpenLinkButton alloc] init];
+    [self addSubview:screenOcrButton];
+    screenOcrButton.image = [[NSImage imageWithSystemSymbolName:@"camera.viewfinder" accessibilityDescription:nil] resizeToSize:imageSize];
+    screenOcrButton.contentTintColor = NSColor.clearColor;
+    [screenOcrButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(quickLinkButtonTopOffset);
+        make.size.mas_equalTo(buttonSize);
+        if (lastView) {
+            make.right.equalTo(lastView.mas_left).offset(-kButtonPadding_4);
+        } else {
+            make.right.equalTo(self).offset(-quickLinkButtonRightOffset);
+        }
+    }];
+    lastView = screenOcrButton;
+    
+    EZOpenLinkButton *settingButton = [[EZOpenLinkButton alloc] init];
+    [self addSubview:settingButton];
+    settingButton.image = [[NSImage imageWithSystemSymbolName:@"gear" accessibilityDescription:nil] resizeToSize:imageSize];
+    settingButton.contentTintColor = NSColor.clearColor;
+    [settingButton mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self).offset(quickLinkButtonTopOffset);
+        make.size.mas_equalTo(buttonSize);
+        if (lastView) {
+            make.right.equalTo(lastView.mas_left).offset(-kButtonPadding_4);
+        } else {
+            make.right.equalTo(self).offset(-quickLinkButtonRightOffset);
+        }
+    }];
+    lastView = screenOcrButton;
+    
     [super updateConstraints];
 }
 
