@@ -730,6 +730,16 @@ static EZWindowManager *_instance;
     }];
 }
 
+- (void)pasteboardTextTranslate {
+    MMLogInfo(@"pasteboardTextTranslate");
+    EZWindowType windowType = Configuration.shared.shortcutSelectTranslateWindowType;
+    self.eventMonitor.actionType = EZActionTypeShortcutQuery;
+    self.actionType = self.eventMonitor.actionType;
+    NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
+    self.selectedText = [[NSPasteboard generalPasteboard] stringForType:NSPasteboardTypeString];
+    [self showFloatingWindowType:windowType queryText:self.selectedText];
+}
+
 - (void)relaunchAfterDelay:(NSTimeInterval)seconds {
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/bin/sh"];

@@ -956,6 +956,7 @@
       }
     },
     "Easydict" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -966,6 +967,7 @@
       }
     },
     "Easydict 🍃" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -2463,9 +2465,6 @@
         }
       }
     },
-    "Select Translate" : {
-
-    },
     "select_query_text_when_window_activate" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3913,6 +3912,9 @@
         }
       }
     },
+    "Show Window" : {
+
+    },
     "show_apple_dictionary_quick_link" : {
       "localizations" : {
         "en" : {
@@ -4185,6 +4187,9 @@
           }
         }
       }
+    },
+    "Translate pasteboard" : {
+
     },
     "uk_phonetic" : {
       "localizations" : {

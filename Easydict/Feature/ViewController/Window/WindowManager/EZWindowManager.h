@@ -38,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)inputTranslate;
 - (void)selectTextTranslate;
+- (void)pasteboardTextTranslate;
 - (void)snipTranslate;
 - (void)showMiniFloatingWindow;
 - (void)screenshotOCR;

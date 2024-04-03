@@ -59,7 +59,7 @@ struct MenuView: View {
                 }
                 .buttonStyle(.borderless)
                 Button(action: {
-                    EZWindowManager.shared().selectTextTranslate()
+                    EZWindowManager.shared().pasteboardTextTranslate()
                 }) {
                     HStack {
                         ZStack {
