@@ -184,6 +184,10 @@
         }
     }];
     lastView = screenOcrSilentButton;
+    [screenOcrSilentButton setClickBlock:^(EZButton *_Nonnull button) {
+        [[EZWindowManager shared] screenshotOCR];
+    }];
+    
     
     EZOpenLinkButton *pasteboardButton = [[EZOpenLinkButton alloc] init];
     [self addSubview:pasteboardButton];
@@ -199,6 +203,9 @@
         }
     }];
     lastView = pasteboardButton;
+    [pasteboardButton setClickBlock:^(EZButton *_Nonnull button) {
+        [[EZWindowManager shared] pasteboardTextTranslate];
+    }];
     
     EZOpenLinkButton *screenOcrButton = [[EZOpenLinkButton alloc] init];
     [self addSubview:screenOcrButton];
@@ -214,6 +221,9 @@
         }
     }];
     lastView = screenOcrButton;
+    [screenOcrButton setClickBlock:^(EZButton *_Nonnull button) {
+        [[EZWindowManager shared] snipTranslate];
+    }];
     
     EZOpenLinkButton *settingButton = [[EZOpenLinkButton alloc] init];
     [self addSubview:settingButton];
@@ -228,7 +238,12 @@
             make.right.equalTo(self).offset(-quickLinkButtonRightOffset);
         }
     }];
-    lastView = screenOcrButton;
+    lastView = settingButton;
+    [settingButton setClickBlock:^(EZButton *_Nonnull button) {
+        [NSApp activateIgnoringOtherApps:YES];
+        [[NSApplication sharedApplication] sendAction:@selector(showSettingsWindow:) to:nil from:nil];
+
+    }];
     
     [super updateConstraints];
 }
