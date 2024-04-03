@@ -69,7 +69,7 @@ struct MenuView: View {
                         .cornerRadius(13)
                         .frame(width: 26, height: 26)
                         VStack(alignment: .leading) {
-                            Text("Select Translate")
+                            Text("Translate pasteboard")
                                 .font(.headline)
                                 .fontWeight(.regular)
                                 .foregroundColor(Color.black)
