@@ -24,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var menuStatusSep0: NSMenuItem!
     var point: NSPoint?
     var statusBarWindow: NSWindow
+    var settingWindow: NSWindow?
     var isWindowShowed = false
 
     override init() {
@@ -79,13 +80,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func clickSetting(_: Any?) {
-        if #available(macOS 13, *) {
-            SettingView().createWindow { window in
-                window.center()
-                window.orderFront(nil)
-                self.statusBarWindow.close()
+        guard let window = settingWindow else {
+            if #available(macOS 13, *) {
+                SettingView().createWindow { window in
+                    self.settingWindow = window
+                    window.center()
+                    window.orderFront(nil)
+                    self.statusBarWindow.close()
+                }
             }
+            return
         }
+        window.center()
+        window.orderFront(nil)
+        statusBarWindow.close()
     }
 
     func showOrCloseWindow() {
