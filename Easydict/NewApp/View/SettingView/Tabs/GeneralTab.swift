@@ -54,18 +54,18 @@ struct GeneralTab: View {
             }
 
             Section {
-                Picker("setting.general.window.mouse_select_translate_window_type", selection: $mouseSelectTranslateWindowType) {
-                    ForEach(EZWindowType.availableOptions, id: \.rawValue) { option in
-                        Text(option.localizedStringResource)
-                            .tag(option)
-                    }
-                }
-                Picker("setting.general.window.shortcut_select_translate_window_type", selection: $shortcutSelectTranslateWindowType) {
-                    ForEach(EZWindowType.availableOptions, id: \.rawValue) { option in
-                        Text(option.localizedStringResource)
-                            .tag(option)
-                    }
-                }
+//                Picker("setting.general.window.mouse_select_translate_window_type", selection: $mouseSelectTranslateWindowType) {
+//                    ForEach(EZWindowType.availableOptions, id: \.rawValue) { option in
+//                        Text(option.localizedStringResource)
+//                            .tag(option)
+//                    }
+//                }
+//                Picker("setting.general.window.shortcut_select_translate_window_type", selection: $shortcutSelectTranslateWindowType) {
+//                    ForEach(EZWindowType.availableOptions, id: \.rawValue) { option in
+//                        Text(option.localizedStringResource)
+//                            .tag(option)
+//                    }
+//                }
                 Picker("setting.general.window.fixed_window_position", selection: $fixedWindowPosition) {
                     ForEach(EZShowWindowPosition.allCases, id: \.rawValue) { option in
                         Text(option.localizedStringResource)
