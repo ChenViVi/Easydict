@@ -116,7 +116,7 @@ struct MenuView: View {
             HStack(spacing: 10) {
                 Button(action: {
                     NSApp.activate(ignoringOtherApps: true)
-                    NSApplication.shared.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+                    NotificationCenter.default.post(name: Notification.Name(kNotificationOpenSettingWindow), object: nil)
                 }) {
                     VStack {
                         Spacer()

@@ -3,6 +3,7 @@ import Combine
 import SwiftUI
 
 let kNotificationOpenStatusWindow = "kNotificationOpenStatusWindow"
+let kNotificationOpenSettingWindow = "kNotificationOpenSettingWindow"
 
 private final class WindowDelegate: NSObject, NSWindowDelegate {
     func windowShouldClose(_ sender: NSWindow) -> Bool {
@@ -46,6 +47,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         EZLog.setupCrashService()
         EZLog.logAppInfo()
         NotificationCenter.default.addObserver(self, selector: #selector(clickMenu(_:)), name: Notification.Name(kNotificationOpenStatusWindow), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(clickSetting(_:)), name: Notification.Name(kNotificationOpenSettingWindow), object: nil)
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { _ in
             if self.isWindowShowed {
                 self.statusBarWindow.close()
@@ -74,6 +76,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc func clickMenu(_: Any?) {
         showOrCloseWindow()
+    }
+
+    @objc func clickSetting(_: Any?) {
+        if #available(macOS 13, *) {
+            SettingView().createWindow { window in
+                window.center()
+                window.orderFront(nil)
+                self.statusBarWindow.close()
+            }
+        }
     }
 
     func showOrCloseWindow() {

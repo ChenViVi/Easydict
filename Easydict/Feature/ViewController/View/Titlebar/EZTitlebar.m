@@ -241,8 +241,7 @@
     lastView = settingButton;
     [settingButton setClickBlock:^(EZButton *_Nonnull button) {
         [NSApp activateIgnoringOtherApps:YES];
-        [[NSApplication sharedApplication] sendAction:@selector(showSettingsWindow:) to:nil from:nil];
-
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"kNotificationOpenSettingWindow" object:nil];
     }];
     
     [super updateConstraints];

@@ -215,6 +215,7 @@
 		27FE95272B3DC55F000AD654 /* EasydictApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE95262B3DC55F000AD654 /* EasydictApp.swift */; };
 		27FE98092B3DD536000AD654 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE98082B3DD536000AD654 /* SettingView.swift */; };
 		27FE980B2B3DD5D1000AD654 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE980A2B3DD5D1000AD654 /* MenuItemView.swift */; };
+		3C3DE3102BBD353F00FB0F54 /* View_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3DE30F2BBD353F00FB0F54 /* View_Extensions.swift */; };
 		3C9BE21E2BB2A0D5009CFD8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BE21D2BB2A0D5009CFD8A /* AppDelegate.swift */; };
 		3C9BE2202BB2A298009CFD8A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BE21F2BB2A298009CFD8A /* MenuView.swift */; };
 		3C9BE2232BB2B051009CFD8A /* Color_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9BE2222BB2B051009CFD8A /* Color_Extensions.swift */; };
@@ -632,6 +633,7 @@
 		27FE980A2B3DD5D1000AD654 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		357E179B303EF855EF4561FB /* Pods-EasydictTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasydictTests.release.xcconfig"; path = "Target Support Files/Pods-EasydictTests/Pods-EasydictTests.release.xcconfig"; sourceTree = "<group>"; };
 		378E73A7EA8FC8FB9C975A63 /* Pods_EasydictTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasydictTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C3DE30F2BBD353F00FB0F54 /* View_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View_Extensions.swift; sourceTree = "<group>"; };
 		3C9BE21D2BB2A0D5009CFD8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3C9BE21F2BB2A298009CFD8A /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		3C9BE2222BB2B051009CFD8A /* Color_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_Extensions.swift; sourceTree = "<group>"; };
@@ -1863,6 +1865,7 @@
 			isa = PBXGroup;
 			children = (
 				3C9BE2222BB2B051009CFD8A /* Color_Extensions.swift */,
+				3C3DE30F2BBD353F00FB0F54 /* View_Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2405,6 +2408,7 @@
 				0329CD6F29EE924500963F78 /* EZRightClickDetector.m in Sources */,
 				033C30FC2A7409C40095926A /* TTTDictionary.m in Sources */,
 				9643D93D2B6F829C000FBEA6 /* MainMenuCommand.swift in Sources */,
+				3C3DE3102BBD353F00FB0F54 /* View_Extensions.swift in Sources */,
 				03B0232D29231FA6001C7E63 /* NSArray+MM.m in Sources */,
 				9643D94C2B71F74D000FBEA6 /* MainMenuShortcutCommandItem.swift in Sources */,
 				0AC8A8412B695480006DA5CC /* DeepLTranslate+ConfigurableService.swift in Sources */,
