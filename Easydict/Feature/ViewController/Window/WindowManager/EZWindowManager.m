@@ -702,7 +702,7 @@ static EZWindowManager *_instance;
             [alert addButtonWithTitle:@"Grant"];
             [alert addButtonWithTitle:@"Restart App"];
             [alert addButtonWithTitle:@"Don't Allow"];
-            [alert beginSheetModalForWindow:[EZWindowManager shared].mainWindow completionHandler:^(NSInteger returnCode){
+            [alert beginSheetModalForWindow:[EZWindowManager shared].statusBarWindow completionHandler:^(NSInteger returnCode){
                 if(returnCode == NSAlertFirstButtonReturn) {
                     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility"]];
                     return;
@@ -777,7 +777,7 @@ static EZWindowManager *_instance;
         [alert addButtonWithTitle:@"Grant"];
         [alert addButtonWithTitle:@"Restart App"];
         [alert addButtonWithTitle:@"Don't Allow"];
-        [alert beginSheetModalForWindow:[EZWindowManager shared].mainWindow completionHandler:^(NSInteger returnCode){
+        [alert beginSheetModalForWindow:[EZWindowManager shared].statusBarWindow completionHandler:^(NSInteger returnCode){
             if(returnCode == NSAlertFirstButtonReturn) {
                 [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture"]];
                 return;

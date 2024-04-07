@@ -25,6 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray *floatingWindowTypeArray;
 @property (nonatomic, assign) EZWindowType floatingWindowType;
 @property (nonatomic, strong, nullable) EZBaseQueryWindow *floatingWindow;
+@property (nonatomic, strong, nullable) NSWindow *statusBarWindow;
 
 @property (nonatomic, strong) EZBaseQueryViewController *backgroundQueryViewController;
 

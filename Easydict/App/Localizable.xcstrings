@@ -680,6 +680,7 @@
       }
     },
     "clear_input_when_translating" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3489,6 +3490,7 @@
       }
     },
     "setting.general.window.mouse_select_translate_window_type" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3505,6 +3507,7 @@
       }
     },
     "setting.general.window.shortcut_select_translate_window_type" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

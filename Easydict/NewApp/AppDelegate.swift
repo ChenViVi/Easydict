@@ -41,6 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarWindow.delegate = windowDelegate
         statusBarWindow.contentView = NSHostingView(rootView: MenuView())
         statusBarWindow.backgroundColor = NSColor.clear
+        EZWindowManager.shared().statusBarWindow = statusBarWindow
     }
 
     func applicationDidFinishLaunching(_: Notification) {
