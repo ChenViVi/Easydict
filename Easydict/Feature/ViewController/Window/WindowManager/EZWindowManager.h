@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Menu Actions, Global Shorcut
 
-- (void)inputTranslate;
+- (void)inputTranslate:(BOOL)clean;
 - (void)selectTextTranslate;
 - (void)pasteboardTextTranslate;
 - (void)snipTranslate;

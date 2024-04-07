@@ -160,7 +160,7 @@ static EZMenuItemManager *_instance;
 
 - (IBAction)inputTranslate:(NSMenuItem *)sender {
     NSLog(@"input translate");
-    [EZWindowManager.shared inputTranslate];
+    [EZWindowManager.shared inputTranslate:NO];
 }
 
 - (IBAction)showMiniFloatingWindow:(NSMenuItem *)sender {

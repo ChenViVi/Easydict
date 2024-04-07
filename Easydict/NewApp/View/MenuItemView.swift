@@ -102,7 +102,7 @@ struct MenuItemView: View {
     private var inputItem: some View {
         Button {
             NSLog("输入翻译")
-            EZWindowManager.shared().inputTranslate()
+            EZWindowManager.shared().inputTranslate(false)
         } label: {
             HStack {
                 Image(systemName: "keyboard")

@@ -58,7 +58,7 @@
     }];
     
     [[MASShortcutBinder sharedBinder] ez_bindShortcutWithDefaultsKey:EZInputShortcutKey toAction:^{
-        [windowManager inputTranslate];
+        [windowManager inputTranslate:NO];
     }];
     
     [[MASShortcutBinder sharedBinder] ez_bindShortcutWithDefaultsKey:EZShowMiniShortcutKey toAction:^{

@@ -83,7 +83,7 @@ extension Shortcut {
     }
 
     @objc func inputTranslate() {
-        EZWindowManager.shared().inputTranslate()
+        EZWindowManager.shared().inputTranslate(false)
     }
 
     @objc func showMiniFloatingWindow() {

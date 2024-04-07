@@ -13,7 +13,7 @@ struct MenuView: View {
         VStack {
             VStack {
                 Button(action: {
-                    EZWindowManager.shared().inputTranslate()
+                    EZWindowManager.shared().inputTranslate(false)
                 }) {
                     HStack {
                         ZStack {

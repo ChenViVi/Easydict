@@ -833,7 +833,7 @@ static EZWindowManager *_instance;
     });
 }
 
-- (void)inputTranslate {
+- (void)inputTranslate:(BOOL)clean {
     MMLogInfo(@"inputTranslate");
     
     [self saveFrontmostApplication];
