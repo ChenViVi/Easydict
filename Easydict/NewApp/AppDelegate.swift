@@ -76,14 +76,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     self.settingWindow = window
                     window.center()
                     window.orderFront(nil)
-                    self.statusBarWindow?.close()
+                    if self.isWindowShowed {
+                        self.isWindowShowed = false
+                        self.statusBarWindow?.close()
+                    }
                 }
             }
             return
         }
         window.center()
         window.orderFront(nil)
-        statusBarWindow?.close()
+        if self.isWindowShowed {
+            self.isWindowShowed = false
+            self.statusBarWindow?.close()
+        }
     }
 
     func showOrCloseWindow(window: NSWindow) {
