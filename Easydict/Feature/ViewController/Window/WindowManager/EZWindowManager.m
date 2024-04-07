@@ -849,7 +849,7 @@ static EZWindowManager *_instance;
     }
     
     NSString *queryText = nil;
-    if ([Configuration.shared clearInput]) {
+    if (clean) {
         queryText = @"";
     }
     

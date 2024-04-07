@@ -134,7 +134,9 @@ struct MenuView: View {
                     .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
                 }
                 .buttonStyle(.borderless)
-                Button(action: {}) {
+                Button(action: {
+                    EZWindowManager.shared().inputTranslate(true)
+                }) {
                     VStack {
                         Spacer()
                         Image(systemName: "dock.rectangle")
