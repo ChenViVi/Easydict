@@ -1,69 +1,45 @@
 import Cocoa
 import Combine
-import SwiftUI
 
 let kNotificationOpenStatusWindow = "kNotificationOpenStatusWindow"
 let kNotificationOpenSettingWindow = "kNotificationOpenSettingWindow"
 
-private final class WindowDelegate: NSObject, NSWindowDelegate {
-    func windowShouldClose(_ sender: NSWindow) -> Bool {
-        NSApp.removeWindowsItem(sender)
-        return true
-    }
-
-    deinit {
-        NSLog("deallocated ...")
-    }
-}
-
 class AppDelegate: NSObject, NSApplicationDelegate {
-    let windowWidth: CGFloat = 330
+    let windowWidth: CGFloat = 320
     var statusItem: NSStatusItem!
     var menuStatusToday: NSMenuItem!
     var menuStatusUpcome: NSMenuItem!
     var menuStatusSep0: NSMenuItem!
     var point: NSPoint?
-    var statusBarWindow: NSWindow
+    var statusBarWindow: NSWindow?
     var settingWindow: NSWindow?
     var isWindowShowed = false
-
-    override init() {
-        let windowDelegate = WindowDelegate()
-        statusBarWindow = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: windowWidth, height: 330),
-            styleMask: [.fullSizeContentView],
-            backing: .buffered, defer: false
-        )
-        statusBarWindow.titlebarAppearsTransparent = true
-        statusBarWindow.isReleasedWhenClosed = false
-        statusBarWindow.title = ""
-        // who owns who :-)
-        statusBarWindow.delegate = windowDelegate
-        statusBarWindow.contentView = NSHostingView(rootView: MenuView())
-        statusBarWindow.backgroundColor = NSColor.clear
-        EZWindowManager.shared().statusBarWindow = statusBarWindow
-    }
 
     func applicationDidFinishLaunching(_: Notification) {
         MMCrash.registerHandler()
         EZLog.setupCrashService()
         EZLog.logAppInfo()
-        NotificationCenter.default.addObserver(self, selector: #selector(clickMenu(_:)), name: Notification.Name(kNotificationOpenStatusWindow), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(openDefaultWindow(_:)), name: Notification.Name(kNotificationOpenStatusWindow), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(clickSetting(_:)), name: Notification.Name(kNotificationOpenSettingWindow), object: nil)
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { _ in
-            if self.isWindowShowed {
-                self.statusBarWindow.close()
-                self.isWindowShowed = false
+            if let window = self.statusBarWindow {
+                if self.isWindowShowed {
+                    window.close()
+                    self.isWindowShowed = false
+                }
+            } else {
+                debugPrint("xxxxx statusBarWindow null")
             }
         }
+        openDefaultWindow(nil)
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         setMenuButtonImage()
         statusItem.button?.action = #selector(clickMenu)
-        clickMenu(nil)
+        clickMenu()
     }
 
     func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
-        clickMenu(nil)
+        clickMenu()
         return true
     }
 
@@ -76,8 +52,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return false
     }
 
-    @objc func clickMenu(_: Any?) {
-        showOrCloseWindow()
+    @objc func openDefaultWindow(_: Any?) {
+        MenuView().createWindow(styleMask: [.fullSizeContentView], width: windowWidth, height: 330) { window in
+            window.backgroundColor = NSColor.clear
+            EZWindowManager.shared().statusBarWindow = window
+            self.statusBarWindow = window
+            self.showOrCloseWindow(window: window)
+        }
+    }
+
+    @objc func clickMenu() {
+        if let window = statusBarWindow {
+            showOrCloseWindow(window: window)
+        } else {
+            debugPrint("xxxxx statusBarWindow null")
+        }
     }
 
     @objc func clickSetting(_: Any?) {
@@ -87,64 +76,65 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     self.settingWindow = window
                     window.center()
                     window.orderFront(nil)
-                    self.statusBarWindow.close()
+                    self.statusBarWindow?.close()
                 }
             }
             return
         }
         window.center()
         window.orderFront(nil)
-        statusBarWindow.close()
+        statusBarWindow?.close()
     }
 
-    func showOrCloseWindow() {
+    func showOrCloseWindow(window: NSWindow) {
         if isWindowShowed {
-            statusBarWindow.close()
+            window.close()
             isWindowShowed = false
             return
         }
         if let point {
-            statusBarWindow.setFrameOrigin(point)
-            statusBarWindow.level = .floating
-            statusBarWindow.orderFront(nil)
+            window.setFrameOrigin(point)
+            window.level = .floating
+            window.orderFront(nil)
             isWindowShowed = true
             return
         }
         if statusItem == nil {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                self.showOrCloseWindow()
+                self.showOrCloseWindow(window: window)
             }
             return
         }
         guard let sender = statusItem.button else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                self.showOrCloseWindow()
+                self.showOrCloseWindow(window: window)
             }
             return
         }
         let rectInWindow = sender.convert(sender.bounds, to: nil)
         guard let screenRect = sender.window?.convertToScreen(rectInWindow) else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                self.showOrCloseWindow()
+                self.showOrCloseWindow(window: window)
             }
             return
         }
         if screenRect.origin.x == NSScreen.main?.frame.size.width || screenRect.origin.x == 0 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-                self.showOrCloseWindow()
+                self.showOrCloseWindow(window: window)
             }
         } else {
             let x = screenRect.origin.x + screenRect.size.width / 2 - windowWidth / 2
             let y = screenRect.origin.y
             point = NSPoint(x: x, y: y)
-            statusBarWindow.setFrameOrigin(NSPoint(x: x, y: y))
-            statusBarWindow.level = .floating
-            statusBarWindow.orderFront(nil)
+            window.setFrameOrigin(NSPoint(x: x, y: y))
+            window.level = .floating
+            window.orderFront(nil)
             isWindowShowed = true
         }
     }
 
-    override func observeValue(forKeyPath _: String?, of _: Any?, change _: [NSKeyValueChangeKey: Any]?, context _: UnsafeMutableRawPointer?) { setMenuButtonImage()
+    override func observeValue(forKeyPath _: String?, of _: Any?, change _: [NSKeyValueChangeKey: Any]?, context _: UnsafeMutableRawPointer?) {
+        setMenuButtonImage()
     }
 
     func setMenuButtonImage() {

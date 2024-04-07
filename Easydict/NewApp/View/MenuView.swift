@@ -177,6 +177,6 @@ struct MenuView: View {
         .padding()
         .background(Color.bgMenu)
         .cornerRadius(10)
-        .shadow(color: Color.black.opacity(0.4), radius: 10, x: 0, y: 10)
+        // .shadow(color: Color.black.opacity(0.4), radius: 10, x: 0, y: 10)
     }
 }

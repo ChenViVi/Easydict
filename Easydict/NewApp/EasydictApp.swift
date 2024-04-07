@@ -1,62 +1,26 @@
 //
 //  EasydictApp.swift
-//  Easydict
+//  CalendarSwiftUI
 //
-//  Created by Kyle on 2023/12/28.
-//  Copyright © 2023 izual. All rights reserved.
+//  Created by mbp15 on 2024/1/31.
 //
 
 import Defaults
-import Sparkle
 import SwiftUI
 
 @main
-enum EasydictCmpatibilityEntry {
-    static func main() {
-        EasydictApp.main()
-    }
-}
-
 struct EasydictApp: App {
-    // Use `@Default` will cause a purple warning and continuously call `set` of it.
-    // I'm not sure why. Just leave `AppStorage` here.
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage(Defaults.Key<Bool>.hideMenuBarIcon.name)
     private var hideMenuBar = Defaults.Key<Bool>.hideMenuBarIcon.defaultValue
 
     @Default(.selectedMenuBarIcon)
     private var menuBarIcon
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         Settings {
             EmptyView()
         }
-//        if #available(macOS 13, *) {
-//            MenuBarExtra(isInserted: $hideMenuBar.toggledValue) {
-//                MenuItemView()
-//            } label: {
-//                Label {
-//                    Text("Easydict")
-//                } icon: {
-//                    Image(menuBarIcon.rawValue)
-//                        .resizable()
-//                    #if DEBUG
-//                        .renderingMode(.original)
-//                    #else
-//                        .renderingMode(.template)
-//                    #endif
-//                        .scaledToFit()
-//                }
-//                .help("Easydict 🍃")
-//            }
-//            // .menuBarExtraStyle(.window)
-//            .menuBarExtraStyle(.menu)
-//            .commands {
-//                EasyDictMainMenu() // main menu
-//            }
-//            Settings {
-//                SettingView()
-//            }
-//        }
     }
 }
 
