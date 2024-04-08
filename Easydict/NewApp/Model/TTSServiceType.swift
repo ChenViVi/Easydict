@@ -18,19 +18,19 @@ enum TTSServiceType: String, CaseIterable {
 }
 
 @available(macOS 13, *)
-extension TTSServiceType: CustomLocalizedStringResourceConvertible {
-    var localizedStringResource: LocalizedStringResource {
+extension TTSServiceType {
+    var localizedStringResource: String {
         switch self {
         case .youdao:
-            "setting.tts_service.options.youdao"
+            "Youdao"
         case .bing:
-            "setting.tts_service.options.bing"
+            "Bing"
         case .google:
-            "setting.tts_service.options.google"
+            "Google"
         case .baidu:
-            "setting.tts_service.options.baidu"
+            "Baidu"
         case .apple:
-            "setting.tts_service.options.apple"
+            "Apple"
         }
     }
 }

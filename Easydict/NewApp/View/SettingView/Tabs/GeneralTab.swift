@@ -247,7 +247,7 @@ private struct FirstAndSecondLanguageSettingView: View {
         var description: String {
             // First language should not be same as second language. (\(duplicatedLanguage))
             // \(setField) is replaced with \(setLanguage).
-            String(localized: "setting.general.language.duplicated_alert \(duplicatedLanguage.localizedName)\(String(localized: setField.localizedStringResource))\(setLanguage.localizedName)")
+            String(localized: "setting.general.language.duplicated_alert \(duplicatedLanguage.localizedName)\(setField.localizedStringResource)\(setLanguage.localizedName)")
         }
 
         let duplicatedLanguage: Language
@@ -256,13 +256,13 @@ private struct FirstAndSecondLanguageSettingView: View {
 
         let setLanguage: Language
 
-        enum Field: CustomLocalizedStringResourceConvertible {
-            var localizedStringResource: LocalizedStringResource {
+        enum Field {
+            var localizedStringResource: String {
                 switch self {
                 case .first:
-                    "setting.general.language.duplicated_alert.field.first"
+                    "first language"
                 case .second:
-                    "setting.general.language.duplicated_alert.field.second"
+                    "second language"
                 }
             }
 
