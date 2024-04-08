@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(macOS 13, *)
 struct KeyHolderAlterView: ViewModifier {
     init(showAlter: Binding<Bool>, confictAlterMessage: Binding<ShortcutConfictAlertMessage>) {
         _showAlter = showAlter
@@ -33,7 +32,6 @@ struct KeyHolderAlterView: ViewModifier {
     }
 }
 
-@available(macOS 13, *)
 public extension View {
     @ViewBuilder
     func keyHolderConfictAlter(_ showAlter: Binding<Bool>, _ confictAlterMessage: Binding<ShortcutConfictAlertMessage>) -> some View {

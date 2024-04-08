@@ -65,7 +65,6 @@ struct SecureTextField: View {
     }
 }
 
-@available(macOS 13.0, *)
 struct SecureInput_Previews: PreviewProvider {
     static var previews: some View {
         Group {
