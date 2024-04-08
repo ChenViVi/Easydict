@@ -10,7 +10,6 @@ import Combine
 import Defaults
 import SwiftUI
 
-@available(macOS 13.0, *)
 struct ServiceConfigurationSecretSectionView<Content: View>: View {
     var service: QueryService
     let content: Content

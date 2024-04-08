@@ -10,14 +10,12 @@ import Defaults
 import Foundation
 import SwiftUI
 
-@available(macOS 13.0, *)
 extension EZDeepLTranslate: ConfigurableService {
     func configurationListItems() -> some View {
         EZDeepLTranslateConfigurationView(service: self)
     }
 }
 
-@available(macOS 13.0, *)
 private struct EZDeepLTranslateConfigurationView: View {
     let service: EZDeepLTranslate
 

@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(macOS 13.0, *)
 struct SecureTextField: View {
     let title: LocalizedStringKey
     let placeholder: LocalizedStringKey

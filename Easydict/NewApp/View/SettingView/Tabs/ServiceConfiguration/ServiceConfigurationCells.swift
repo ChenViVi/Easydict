@@ -9,7 +9,6 @@
 import Defaults
 import SwiftUI
 
-@available(macOS 13.0, *)
 struct ServiceConfigurationSecureInputCell: View {
     @Default var value: String?
     let textFieldTitleKey: LocalizedStringKey
@@ -30,7 +29,6 @@ struct ServiceConfigurationSecureInputCell: View {
     }
 }
 
-@available(macOS 13.0, *)
 struct ServiceConfigurationInputCell: View {
     @Default var value: String?
     let textFieldTitleKey: LocalizedStringKey
@@ -48,7 +46,6 @@ struct ServiceConfigurationInputCell: View {
     }
 }
 
-@available(macOS 13.0, *)
 struct ServiceConfigurationPickerCell<T: Hashable & Defaults.Serializable & EnumLocalizedStringConvertible>: View {
     @Default var value: T
     let titleKey: LocalizedStringKey
@@ -74,7 +71,6 @@ class ConfigurationToggleViewModel: ObservableObject {
     @Published var isOn = false
 }
 
-@available(macOS 13.0, *)
 struct ServiceConfigurationToggleCell: View {
     @Default var value: String
     let titleKey: LocalizedStringKey
