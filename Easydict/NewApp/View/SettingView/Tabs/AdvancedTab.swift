@@ -23,7 +23,7 @@ struct AdvancedTab: View {
             } header: {
                 Text("setting.general.advance.header")
             }
-        }
+        }.padding()
         // .formStyle(.grouped)
     }
 

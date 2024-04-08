@@ -213,7 +213,6 @@
 		276742092B3DC230002A2C75 /* AboutTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276742052B3DC230002A2C75 /* AboutTab.swift */; };
 		278540342B3DE04F004E9488 /* GeneralTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278540332B3DE04F004E9488 /* GeneralTab.swift */; };
 		27FE98092B3DD536000AD654 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE98082B3DD536000AD654 /* SettingView.swift */; };
-		27FE980B2B3DD5D1000AD654 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27FE980A2B3DD5D1000AD654 /* MenuItemView.swift */; };
 		3C19AA3F2BC28BA70099F4B1 /* EasydictApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C19AA3E2BC28BA70099F4B1 /* EasydictApp.swift */; };
 		3C19AA412BC292110099F4B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C19AA402BC292110099F4B1 /* AppDelegate.swift */; };
 		3C3DE3102BBD353F00FB0F54 /* View_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3DE30F2BBD353F00FB0F54 /* View_Extensions.swift */; };
@@ -629,7 +628,6 @@
 		27B7919D2AEC36A1006E07C6 /* Easydict-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Easydict-debug.xcconfig"; sourceTree = "<group>"; };
 		27B791A02AEC3A5C006E07C6 /* Easydict-debug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Easydict-debug.entitlements"; sourceTree = "<group>"; };
 		27FE98082B3DD536000AD654 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		27FE980A2B3DD5D1000AD654 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
 		357E179B303EF855EF4561FB /* Pods-EasydictTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasydictTests.release.xcconfig"; path = "Target Support Files/Pods-EasydictTests/Pods-EasydictTests.release.xcconfig"; sourceTree = "<group>"; };
 		378E73A7EA8FC8FB9C975A63 /* Pods_EasydictTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EasydictTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C19AA3E2BC28BA70099F4B1 /* EasydictApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasydictApp.swift; sourceTree = "<group>"; };
@@ -1828,7 +1826,6 @@
 			isa = PBXGroup;
 			children = (
 				9643D93E2B6FC405000FBEA6 /* MenuView */,
-				27FE980A2B3DD5D1000AD654 /* MenuItemView.swift */,
 				3C9BE21F2BB2A298009CFD8A /* MenuView.swift */,
 				0AC11B212B4D16A500F07198 /* WindowAccessor.swift */,
 				0AC11B232B4E46B300F07198 /* TapHandlerView.swift */,
@@ -2355,7 +2352,6 @@
 				03B0233029231FA6001C7E63 /* MMCrashUncaughtExceptionHandler.m in Sources */,
 				03D5FCFF2A5EF4E400AD26BE /* EZDeviceSystemInfo.m in Sources */,
 				0AC11B242B4E46B300F07198 /* TapHandlerView.swift in Sources */,
-				27FE980B2B3DD5D1000AD654 /* MenuItemView.swift in Sources */,
 				9643D9392B6F49E0000FBEA6 /* AppShortcutSetting.swift in Sources */,
 				96099AE22B5D40330055C4DD /* ShortcutTab.swift in Sources */,
 				0399C6AC29A860AA00B4AFCC /* EZOpenAIService.m in Sources */,

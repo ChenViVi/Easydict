@@ -1145,6 +1145,7 @@
       }
     },
     "Export Log" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -1166,6 +1167,7 @@
       }
     },
     "Feedback" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -1430,6 +1432,7 @@
       }
     },
     "Help" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -1772,6 +1775,7 @@
       }
     },
     "Log Directory" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -1877,6 +1881,7 @@
       }
     },
     "menu_selectWord_Translate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1893,6 +1898,7 @@
       }
     },
     "menu_show_mini_window" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1909,6 +1915,7 @@
       }
     },
     "menu_silent_screenshot_OCR" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2388,6 +2395,7 @@
       }
     },
     "quit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -3667,6 +3675,7 @@
       }
     },
     "Settings..." : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
