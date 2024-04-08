@@ -92,7 +92,6 @@ struct ServiceConfigurationToggleCell: View {
     }
 }
 
-@available(macOS 13.0, *)
 #Preview {
     Group {
         ServiceConfigurationSecureInputCell(
