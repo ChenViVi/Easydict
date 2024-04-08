@@ -17,7 +17,6 @@ enum TTSServiceType: String, CaseIterable {
     case apple = "Apple"
 }
 
-@available(macOS 13, *)
 extension TTSServiceType {
     var localizedStringResource: String {
         switch self {

@@ -9,7 +9,6 @@
 import Defaults
 import SwiftUI
 
-@available(macOS 13, *)
 struct GeneralTab: View {
     @Environment(\.colorScheme) var colorScheme
 
@@ -153,7 +152,7 @@ struct GeneralTab: View {
                 Text("setting.general.other.header")
             }
         }
-        .formStyle(.grouped)
+        // .formStyle(.grouped)
     }
 
     @Default(.autoSelectText) private var autoSelectText
@@ -197,12 +196,10 @@ struct GeneralTab: View {
     @Default(.selectedMenuBarIcon) private var selectedMenuBarIcon
 }
 
-@available(macOS 13, *)
 #Preview {
     GeneralTab()
 }
 
-@available(macOS 13, *)
 private struct FirstAndSecondLanguageSettingView: View {
     var body: some View {
         Group {
