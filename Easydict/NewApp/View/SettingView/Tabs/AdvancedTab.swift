@@ -9,7 +9,6 @@
 import Defaults
 import SwiftUI
 
-@available(macOS 13, *)
 struct AdvancedTab: View {
     var body: some View {
         Form {
@@ -25,14 +24,13 @@ struct AdvancedTab: View {
                 Text("setting.general.advance.header")
             }
         }
-        .formStyle(.grouped)
+        // .formStyle(.grouped)
     }
 
     @Default(.defaultTTSServiceType) private var defaultTTSServiceType
     @Default(.enableBetaFeature) private var enableBetaFeature
 }
 
-@available(macOS 13, *)
 #Preview {
     AdvancedTab()
 }

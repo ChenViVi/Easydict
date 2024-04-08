@@ -9,7 +9,6 @@
 import Defaults
 import SwiftUI
 
-@available(macOS 13, *)
 struct AboutTab: View {
     var body: some View {
         ScrollView {
@@ -26,7 +25,7 @@ struct AboutTab: View {
             .padding(.vertical, 30)
             .frame(maxWidth: .infinity)
         }
-        .scrollIndicators(.hidden)
+        // .scrollIndicators(.hidden)
         .task {
             let version = await EZMenuItemManager.shared().fetchRepoLatestVersion(EZGithubRepoEasydict)
             await MainActor.run {
@@ -46,7 +45,6 @@ struct AboutTab: View {
     }
 }
 
-@available(macOS 13, *)
 #Preview {
     AboutTab()
 }

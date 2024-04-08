@@ -9,7 +9,6 @@
 import Combine
 import SwiftUI
 
-@available(macOS 13, *)
 struct ServiceTab: View {
     @StateObject private var viewModel: ServiceTabViewModel = .init()
 
@@ -19,7 +18,7 @@ struct ServiceTab: View {
                 ServiceItems()
             }
             .listStyle(.plain)
-            .scrollIndicators(.never)
+            // .scrollIndicators(.never)
             .clipShape(RoundedRectangle(cornerRadius: 10))
             .padding()
             .frame(width: 250)
@@ -97,7 +96,6 @@ private class ServiceTabViewModel: ObservableObject {
     }
 }
 
-@available(macOS 13.0, *)
 private struct ServiceItems: View {
     @EnvironmentObject private var viewModel: ServiceTabViewModel
 
@@ -124,7 +122,6 @@ private class ServiceItemViewModel: ObservableObject {
     }
 }
 
-@available(macOS 13.0, *)
 private struct ServiceItemView: View {
     let service: QueryService
 
@@ -161,7 +158,7 @@ private struct ServiceItemView: View {
         .padding(4.0)
         .toggleStyle(.switch)
         .controlSize(.small)
-        .listRowSeparator(.hidden)
+        // .listRowSeparator(.hidden)
         .listRowInsets(.init())
         .padding(10)
     }
