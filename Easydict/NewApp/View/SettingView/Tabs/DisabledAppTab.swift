@@ -68,7 +68,6 @@ private class DisabledAppViewModel: ObservableObject {
     }
 }
 
-@available(macOS 13.0, *)
 struct DisabledAppTab: View {
     @StateObject private var disabledAppViewModel = DisabledAppViewModel()
 
@@ -98,10 +97,10 @@ struct DisabledAppTab: View {
                 BlockAppItemView(with: app)
                     .tag(app)
             }
-            .listRowSeparator(.hidden)
+            // .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
-        .scrollIndicators(.never)
+        // .scrollIndicators(.never)
     }
 
     var appListViewWithToolbar: some View {
@@ -135,7 +134,6 @@ struct DisabledAppTab: View {
     }
 }
 
-@available(macOS 13.0, *)
 private struct ListToolbar: View {
     @EnvironmentObject private var disabledAppViewModel: DisabledAppViewModel
 
@@ -162,7 +160,6 @@ private struct ListToolbar: View {
     }
 }
 
-@available(macOS 13.0, *)
 private struct ListButton: View {
     @Environment(\.isEnabled) private var isEnabled: Bool
     var systemName: String
@@ -185,7 +182,6 @@ private struct ListButton: View {
     }
 }
 
-@available(macOS 13.0, *)
 private struct BlockAppItemView: View {
     @EnvironmentObject var disabledAppViewModel: DisabledAppViewModel
 
@@ -197,10 +193,12 @@ private struct BlockAppItemView: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Image(nsImage: appItemViewModel.appIcon)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 24, height: 24)
+            if let appIcon = appItemViewModel.appIcon {
+                Image(nsImage: appIcon)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 24, height: 24)
+            }
 
             Text(appItemViewModel.appName)
 
@@ -213,9 +211,8 @@ private struct BlockAppItemView: View {
     }
 }
 
-@available(macOS 13.0, *)
 private class AppItemViewModel: ObservableObject {
-    @Published var appIcon = NSImage()
+    @Published var appIcon: NSImage?
 
     @Published var appName = ""
 
@@ -234,14 +231,14 @@ private class AppItemViewModel: ObservableObject {
 
         let appPath = NSWorkspace.shared.urlForApplication(withBundleIdentifier: appBundleId)
         guard let appPath else { return }
-        appIcon = workspace.icon(forFile: appPath.path(percentEncoded: false))
-
+        if #available(macOS 13.0, *) {
+            appIcon = workspace.icon(forFile: appPath.path(percentEncoded: false))
+        }
         guard let appBundle = Bundle(url: appURL) else { return }
         appName = appBundle.applicationName
     }
 }
 
-@available(macOS 13.0, *)
 #Preview {
     DisabledAppTab()
 }

@@ -17,7 +17,6 @@ enum SettingTab: Int {
     case about
 }
 
-@available(macOS 13, *)
 struct SettingView: View {
     @State private var selection = SettingTab.general
     @State private var window: NSWindow?
@@ -88,7 +87,6 @@ struct SettingView: View {
     }
 }
 
-@available(macOS 13, *)
 #Preview {
     SettingView()
 }
