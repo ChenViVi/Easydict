@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(macOS 13, *)
 struct KeyHolderRowView: View {
     @State public var title: String
     @State public var type: ShortcutType

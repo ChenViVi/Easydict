@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(macOS 13, *)
 struct ShortcutTab: View {
     var body: some View {
         Form {
@@ -17,11 +16,10 @@ struct ShortcutTab: View {
             // In app shortcut
             AppShortcutSettingView()
         }
-        .formStyle(.grouped)
+        // .formStyle(.grouped)
     }
 }
 
-@available(macOS 13, *)
 #Preview {
     ShortcutTab()
 }
