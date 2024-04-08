@@ -15,16 +15,15 @@ extension LanguageDetectOptimize: CaseIterable {
     public static let allCases: [LanguageDetectOptimize] = [.none, .baidu, .google]
 }
 
-@available(macOS 13, *)
-extension LanguageDetectOptimize: CustomLocalizedStringResourceConvertible {
-    public var localizedStringResource: LocalizedStringResource {
+extension LanguageDetectOptimize {
+    var localizedStringResource: String {
         switch self {
         case .none:
-            "language_detect_optimize_none"
+            "Only use System language detection"
         case .google:
-            "language_detect_optimize_google"
+            "Use Google language detection for optimization"
         case .baidu:
-            "language_detect_optimize_baidu"
+            "Use Baidu language detection for optimization"
         @unknown default:
             "unknown_option"
         }

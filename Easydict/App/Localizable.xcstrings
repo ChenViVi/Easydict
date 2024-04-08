@@ -1651,6 +1651,7 @@
       }
     },
     "language_detect_optimize_baidu" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1667,6 +1668,7 @@
       }
     },
     "language_detect_optimize_google" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1683,6 +1685,7 @@
       }
     },
     "language_detect_optimize_none" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1776,6 +1779,7 @@
       }
     },
     "main_window" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -2001,6 +2005,7 @@
       }
     },
     "none_window" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -4233,6 +4238,7 @@
       }
     },
     "unknown_option" : {
+      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {

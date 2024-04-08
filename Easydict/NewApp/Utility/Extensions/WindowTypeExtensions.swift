@@ -15,16 +15,15 @@ public extension EZWindowType {
     static let availableOptions: [EZWindowType] = [.mini, .fixed]
 }
 
-@available(macOS 13, *)
-extension EZWindowType: CustomLocalizedStringResourceConvertible {
-    public var localizedStringResource: LocalizedStringResource {
+public extension EZWindowType {
+    var localizedStringResource: String {
         switch self {
         case .fixed:
-            "fixed_window"
+            "Fixed float window"
         case .main:
-            "main_window"
+            "Main window"
         case .mini:
-            "mini_window"
+            "Mini window"
         case .none:
             "none_window"
         @unknown default:

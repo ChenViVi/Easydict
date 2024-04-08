@@ -15,18 +15,17 @@ extension EZShowWindowPosition: CaseIterable {
     public static let allCases: [EZShowWindowPosition] = [.right, .mouse, .former, .center]
 }
 
-@available(macOS 13, *)
-extension EZShowWindowPosition: CustomLocalizedStringResourceConvertible {
-    public var localizedStringResource: LocalizedStringResource {
+public extension EZShowWindowPosition {
+    var localizedStringResource: String {
         switch self {
         case .right:
-            "fixed_window_position_right"
+            "Right side of screen"
         case .mouse:
-            "fixed_window_position_mouse"
+            "Mouse position"
         case .former:
-            "fixed_window_position_former"
+            "Last position"
         case .center:
-            "fixed_window_position_center"
+            "Center of screen"
         @unknown default:
             "unknown_option"
         }

@@ -86,9 +86,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         window.center()
         window.orderFront(nil)
-        if self.isWindowShowed {
-            self.isWindowShowed = false
-            self.statusBarWindow?.close()
+        if isWindowShowed {
+            isWindowShowed = false
+            statusBarWindow?.close()
         }
     }
 
