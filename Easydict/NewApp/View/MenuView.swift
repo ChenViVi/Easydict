@@ -13,6 +13,7 @@ struct MenuView: View {
         VStack {
             VStack {
                 Button(action: {
+                    NotificationCenter.default.post(name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
                     EZWindowManager.shared().inputTranslate(false)
                 }) {
                     HStack {
@@ -36,6 +37,7 @@ struct MenuView: View {
                 }
                 .buttonStyle(.borderless)
                 Button(action: {
+                    NotificationCenter.default.post(name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
                     EZWindowManager.shared().snipTranslate()
                 }) {
                     HStack {
@@ -59,6 +61,7 @@ struct MenuView: View {
                 }
                 .buttonStyle(.borderless)
                 Button(action: {
+                    NotificationCenter.default.post(name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
                     EZWindowManager.shared().pasteboardTextTranslate()
                 }) {
                     HStack {
@@ -87,6 +90,7 @@ struct MenuView: View {
             .cornerRadius(10)
             .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
             Button(action: {
+                NotificationCenter.default.post(name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
                 EZWindowManager.shared().screenshotOCR()
             }) {
                 HStack {
@@ -116,7 +120,7 @@ struct MenuView: View {
             HStack(spacing: 10) {
                 Button(action: {
                     NSApp.activate(ignoringOtherApps: true)
-                    NotificationCenter.default.post(name: Notification.Name(kNotificationOpenSettingWindow), object: nil)
+                    NotificationCenter.default.post(name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
                 }) {
                     VStack {
                         Spacer()
@@ -135,6 +139,7 @@ struct MenuView: View {
                 }
                 .buttonStyle(.borderless)
                 Button(action: {
+                    NotificationCenter.default.post(name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
                     EZWindowManager.shared().inputTranslate(true)
                 }) {
                     VStack {

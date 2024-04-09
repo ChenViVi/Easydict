@@ -1,7 +1,7 @@
 import Cocoa
 import Combine
 
-let kNotificationOpenStatusWindow = "kNotificationOpenStatusWindow"
+let kNotificationCloseStatusWindow = "kNotificationCloseStatusWindow"
 let kNotificationOpenSettingWindow = "kNotificationOpenSettingWindow"
 
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         MMCrash.registerHandler()
         EZLog.setupCrashService()
         EZLog.logAppInfo()
-        NotificationCenter.default.addObserver(self, selector: #selector(openDefaultWindow(_:)), name: Notification.Name(kNotificationOpenStatusWindow), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(closeMenu(_:)), name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(clickSetting(_:)), name: Notification.Name(kNotificationOpenSettingWindow), object: nil)
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { _ in
             if let window = self.statusBarWindow {
@@ -38,7 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationShouldHandleReopen(_: NSApplication, hasVisibleWindows _: Bool) -> Bool {
-        clickMenu()
+        clickMenu(nil)
         return true
     }
 
@@ -60,7 +60,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    @objc func clickMenu() {
+    @objc func closeMenu(_: Any?) {
+        if let window = statusBarWindow {
+            window.close()
+            isWindowShowed = false
+        } else {
+            debugPrint("xxxxx statusBarWindow null")
+        }
+    }
+
+    @objc func clickMenu(_: Any?) {
         if let window = statusBarWindow {
             showOrCloseWindow(window: window)
         } else {
