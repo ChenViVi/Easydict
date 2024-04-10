@@ -1065,6 +1065,12 @@ static void dispatch_block_on_main_safely(dispatch_block_t block) {
         
         [self updateQueryViewModelAndDetectedLanguage:queryModel];
         
+        if(self.queryText.length == 0) {
+            [self clearAll];
+        } else {
+            [self startQueryText:self.queryText];
+        }
+        
         if (completion) {
             completion(queryModel.detectedLanguage);
         }
