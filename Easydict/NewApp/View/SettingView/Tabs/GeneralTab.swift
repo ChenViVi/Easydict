@@ -140,16 +140,6 @@ struct GeneralTab: View {
                         Toggle(isOn: $hideMenuBarIcon) {
                             Text("hide_menu_bar_icon")
                         }
-                        Picker(
-                            "modify_menubar_icon",
-                            selection: $selectedMenuBarIcon
-                        ) {
-                            ForEach(MenuBarIconType.allCases) { option in
-                                Image(option.rawValue)
-                                    .renderingMode(.template)
-                                    .foregroundStyle(.primary)
-                            }
-                        }
                     } header: {
                         Text("setting.general.other.header")
                     }
@@ -198,7 +188,6 @@ struct GeneralTab: View {
     @Default(.appearanceType) private var appearanceType
 
     @Default(.fontSizeOptionIndex) private var fontSizeOptionIndex
-    @Default(.selectedMenuBarIcon) private var selectedMenuBarIcon
 }
 
 #Preview {

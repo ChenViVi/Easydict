@@ -60,7 +60,6 @@ extension Defaults.Keys {
 
     static let appearanceType = Key<AppearenceType>("EZConfiguration_kApperanceKey", default: .followSystem)
     static let fontSizeOptionIndex = Key<UInt>("EZConfiguration_kTranslationControllerFontKey", default: 0)
-    static let selectedMenuBarIcon = Key<MenuBarIconType>("EZConfiguration_kSelectedMenuBarIconKey", default: .square)
 
     static var enableBetaNewApp: Key<Bool> {
         if #available(macOS 13.0, *) {
