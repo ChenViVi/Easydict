@@ -121,6 +121,7 @@ struct MenuView: View {
                 Button(action: {
                     NSApp.activate(ignoringOtherApps: true)
                     NotificationCenter.default.post(name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
+                    NotificationCenter.default.post(name: Notification.Name(kNotificationOpenSettingWindow), object: nil)
                 }) {
                     VStack {
                         Spacer()
