@@ -102,7 +102,6 @@ struct GeneralTab: View {
 
                     Section {
                         Toggle("show_google_quick_link", isOn: $showGoogleQuickLink)
-                        Toggle("show_eudic_quick_link", isOn: $showEudicQuickLink)
                         Toggle("show_apple_dictionary_quick_link", isOn: $showAppleDictionaryQuickLink)
                     } header: {
                         Text("setting.general.quick_link.header")
