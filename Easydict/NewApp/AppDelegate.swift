@@ -153,9 +153,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func setMenuButtonImage() {
         if isDarkMode() {
-            statusItem.button?.image = NSImage(named: "square_menu_bar_icon")
+            statusItem.button?.image = NSImage(named: "pawprint")
         } else {
-            statusItem.button?.image = NSImage(named: "square_menu_bar_icon")
+            statusItem.button?.image = NSImage(named: "pawprint")
         }
     }
 
