@@ -96,9 +96,6 @@ let kHideMenuBarIconKey = "EZConfiguration_kHideMenuBarIconKey"
     @DefaultsWrapper(.showGoogleQuickLink)
     var showGoogleQuickLink: Bool
 
-    @DefaultsWrapper(.showEudicQuickLink)
-    var showEudicQuickLink: Bool
-
     @DefaultsWrapper(.showAppleDictionaryQuickLink)
     var showAppleDictionaryQuickLink: Bool
 
@@ -304,14 +301,6 @@ let kHideMenuBarIconKey = "EZConfiguration_kHideMenuBarIconKey"
         )
 
         cancellables.append(
-            Defaults.publisher(.showEudicQuickLink)
-                .removeDuplicates()
-                .sink { [weak self] _ in
-                    self?.didSetShowEudicQuickLink()
-                }
-        )
-
-        cancellables.append(
             Defaults.publisher(.showAppleDictionaryQuickLink)
                 .removeDuplicates()
                 .sink { [weak self] _ in
@@ -507,14 +496,6 @@ private extension Configuration {
         EZMenuItemManager.shared().googleItem?.isHidden = !showGoogleQuickLink
 
         logSettings(["show_google_link": showGoogleQuickLink])
-    }
-
-    func didSetShowEudicQuickLink() {
-        postUpdateQuickLinkButtonNotification()
-
-        EZMenuItemManager.shared().eudicItem?.isHidden = !showEudicQuickLink
-
-        logSettings(["show_eudic_link": showEudicQuickLink])
     }
 
     func didSetShowAppleDictionaryQuickLink() {

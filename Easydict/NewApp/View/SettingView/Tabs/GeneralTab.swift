@@ -163,7 +163,6 @@ struct GeneralTab: View {
     @Default(.autoCopyFirstTranslatedText) private var autoCopyFirstTranslatedText
 
     @Default(.showGoogleQuickLink) private var showGoogleQuickLink
-    @Default(.showEudicQuickLink) private var showEudicQuickLink
     @Default(.showAppleDictionaryQuickLink) private var showAppleDictionaryQuickLink
 
     @Default(.hideMainWindow) private var hideMainWindow

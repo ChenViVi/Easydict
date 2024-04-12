@@ -62,7 +62,6 @@ typedef NS_ENUM(NSUInteger, EZAppearenceType) {
 @property (nonatomic, assign) EZLanguageDetectOptimize languageDetectOptimize;
 @property (nonatomic, copy) EZServiceType defaultTTSServiceType;
 @property (nonatomic, assign) BOOL showGoogleQuickLink;
-@property (nonatomic, assign) BOOL showEudicQuickLink;
 @property (nonatomic, assign) BOOL showAppleDictionaryQuickLink;
 @property (nonatomic, assign) BOOL hideMenuBarIcon;
 @property (nonatomic, assign) BOOL enableBetaNewApp;

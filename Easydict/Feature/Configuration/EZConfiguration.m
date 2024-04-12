@@ -116,7 +116,6 @@ static EZConfiguration *_instance;
     self.languageDetectOptimize = [NSUserDefaults mm_readInteger:kLanguageDetectOptimizeTypeKey defaultValue:EZLanguageDetectOptimizeNone];
     self.defaultTTSServiceType = [NSUserDefaults mm_readString:kDefaultTTSServiceTypeKey defaultValue:EZServiceTypeYoudao];
     self.showGoogleQuickLink = [NSUserDefaults mm_readBool:kShowGoogleLinkKey defaultValue:YES];
-    self.showEudicQuickLink = [NSUserDefaults mm_readBool:kShowEudicLinkKey defaultValue:YES];
     self.showAppleDictionaryQuickLink = [NSUserDefaults mm_readBool:kShowAppleDictionaryLinkKey defaultValue:YES];
     self.hideMenuBarIcon = [NSUserDefaults mm_readBool:kHideMenuBarIconKey defaultValue:NO];
     self.fixedWindowPosition = [NSUserDefaults mm_readInteger:kShowFixedWindowPositionKey defaultValue:EZShowWindowPositionRight];
@@ -324,17 +323,6 @@ static EZConfiguration *_instance;
     EZMenuItemManager.shared.googleItem.hidden = !showGoogleLink;
     
     [self logSettings:@{@"show_google_link" : @(showGoogleLink)}];
-}
-
-- (void)setShowEudicQuickLink:(BOOL)showEudicLink {
-    _showEudicQuickLink = showEudicLink;
-    
-    [NSUserDefaults mm_write:@(showEudicLink) forKey:kShowEudicLinkKey];
-    [self postUpdateQuickLinkButtonNotification];
-    
-    EZMenuItemManager.shared.eudicItem.hidden = !showEudicLink;
-    
-    [self logSettings:@{@"show_eudic_link" : @(showEudicLink)}];
 }
 
 - (void)setShowAppleDictionaryQuickLink:(BOOL)showAppleDictionaryQuickLink {

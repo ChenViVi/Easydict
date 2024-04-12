@@ -43,7 +43,6 @@ extension Defaults.Keys {
     static let languageDetectOptimize = Key<LanguageDetectOptimize>("EZConfiguration_kLanguageDetectOptimizeTypeKey", default: LanguageDetectOptimize.none)
     static let defaultTTSServiceType = Key<TTSServiceType>("EZConfiguration_kDefaultTTSServiceTypeKey", default: TTSServiceType.youdao)
     static let showGoogleQuickLink = Key<Bool>("EZConfiguration_kShowGoogleLinkKey", default: true)
-    static let showEudicQuickLink = Key<Bool>("EZConfiguration_kShowEudicLinkKey", default: true)
     static let showAppleDictionaryQuickLink = Key<Bool>("EZConfiguration_kShowAppleDictionaryLinkKey", default: true)
     static let hideMenuBarIcon = Key<Bool>("EZConfiguration_kHideMenuBarIconKey", default: false)
     static let fixedWindowPosition = Key<EZShowWindowPosition>("EZConfiguration_kShowFixedWindowPositionKey", default: .right)

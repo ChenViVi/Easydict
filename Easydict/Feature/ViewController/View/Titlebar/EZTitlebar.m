@@ -140,36 +140,6 @@
         lastView = appleDictButton;
     }
     
-    // Eudic
-    if (Configuration.shared.showEudicQuickLink) {
-        EZOpenLinkButton *eudicButton = [[EZOpenLinkButton alloc] init];
-        
-        // !!!: Note that some applications have multiple channel versions. Ref: https://github.com/tisfeng/Raycast-Easydict/issues/16
-        BOOL installedEudic = [self checkInstalledApp:@[@"com.eusoft.freeeudic", @"com.eusoft.eudic", @"eusoft.eudic.ip"]];
-        eudicButton.hidden = !installedEudic;
-        if (installedEudic) {
-            [self addSubview:eudicButton];
-            self.eudicButton = eudicButton;
-            self.favoriteButton = eudicButton;
-            
-            eudicButton.link = EZEudicAppURLScheme;
-            eudicButton.image = [[NSImage imageNamed:@"Eudic"] resizeToSize:imageSize];
-            eudicButton.toolTip = [NSString stringWithFormat:@"%@, %@", NSLocalizedString(@"open_in_eudic", nil), @"⌘+⇧+⏎"];
-            eudicButton.contentTintColor = NSColor.clearColor;
-            
-            [eudicButton mas_remakeConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self).offset(quickLinkButtonTopOffset);
-                make.size.mas_equalTo(buttonSize);
-                if (lastView) {
-                    make.right.equalTo(lastView.mas_left).offset(-kButtonPadding_4);
-                } else {
-                    make.right.equalTo(self).offset(-quickLinkButtonRightOffset);
-                }
-            }];
-            lastView = eudicButton;
-        }
-    }
-    
     EZOpenLinkButton *screenOcrSilentButton = [[EZOpenLinkButton alloc] init];
     [self addSubview:screenOcrSilentButton];
     screenOcrSilentButton.image = [[NSImage imageWithSystemSymbolName:@"dot.viewfinder" accessibilityDescription:nil] resizeToSize:imageSize];
