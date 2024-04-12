@@ -134,12 +134,6 @@ struct GeneralTab: View {
                         Toggle(isOn: $launchAtStartup) {
                             Text("launch_at_startup")
                         }
-                        Toggle(isOn: $hideMainWindow) {
-                            Text("hide_main_window")
-                        }
-                        Toggle(isOn: $hideMenuBarIcon) {
-                            Text("hide_menu_bar_icon")
-                        }
                     } header: {
                         Text("setting.general.other.header")
                     }

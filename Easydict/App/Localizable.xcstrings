@@ -1460,6 +1460,7 @@
       }
     },
     "hide_main_window" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1476,6 +1477,7 @@
       }
     },
     "hide_menu_bar_icon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
