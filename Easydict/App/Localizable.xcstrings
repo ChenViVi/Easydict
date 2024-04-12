@@ -1761,6 +1761,7 @@
       }
     },
     "launch_at_startup" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

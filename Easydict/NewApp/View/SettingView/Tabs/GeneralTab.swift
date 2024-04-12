@@ -128,14 +128,6 @@ struct GeneralTab: View {
                         Text("hints_keyboard_shortcuts_font_size")
                             .font(.footnote)
                     }
-
-                    Section {
-                        Toggle(isOn: $launchAtStartup) {
-                            Text("launch_at_startup")
-                        }
-                    } header: {
-                        Text("setting.general.other.header")
-                    }
                 }
             }
             .padding()
