@@ -35,7 +35,7 @@ struct MenuView: View {
                         Spacer()
                     }
                 }
-                .buttonStyle(.borderless)
+                .buttonStyle(.plain)
                 Button(action: {
                     NotificationCenter.default.post(name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
                     EZWindowManager.shared().snipTranslate()
@@ -59,7 +59,7 @@ struct MenuView: View {
                         Spacer()
                     }
                 }
-                .buttonStyle(.borderless)
+                .buttonStyle(.plain)
                 Button(action: {
                     NotificationCenter.default.post(name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
                     EZWindowManager.shared().pasteboardTextTranslate()
@@ -83,7 +83,7 @@ struct MenuView: View {
                         Spacer()
                     }
                 }
-                .buttonStyle(.borderless)
+                .buttonStyle(.plain)
             }
             .padding()
             .background(Color.bgMenuItem)
@@ -116,7 +116,8 @@ struct MenuView: View {
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
             }
-            .buttonStyle(.borderless)
+            .buttonStyle(.plain)
+            Spacer().frame(height: 10)
             HStack(spacing: 10) {
                 Button(action: {
                     NSApp.activate(ignoringOtherApps: true)
@@ -138,7 +139,7 @@ struct MenuView: View {
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
                 }
-                .buttonStyle(.borderless)
+                .buttonStyle(.plain)
                 Button(action: {
                     NotificationCenter.default.post(name: Notification.Name(kNotificationCloseStatusWindow), object: nil)
                     EZWindowManager.shared().inputTranslate(true)
@@ -158,7 +159,7 @@ struct MenuView: View {
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
                 }
-                .buttonStyle(.borderless)
+                .buttonStyle(.plain)
                 Button(action: {
                     NSApplication.shared.terminate(nil)
                 }) {
@@ -177,7 +178,7 @@ struct MenuView: View {
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.3), radius: 10, x: 0, y: 10)
                 }
-                .buttonStyle(.borderless)
+                .buttonStyle(.plain)
             }
         }
         .padding()
